@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>color</key>
+		<string>#ff0000</string>
+		<key>images</key>
+		<array>
+			<dict>
+				<key>fileName</key>
+				<string>Red1.jpg</string>
+			</dict>
+		</array>
+		<key>start</key>
+		<dict>
+			<key>fileName</key>
+			<string>stop.png</string>
+		</dict>
+		<key>name</key>
+		<string>Red</string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#ffa500</string>
+		<key>images</key>
+		<array>
+			<dict>
+				<key>fileName</key>
+				<string>Orange1.jpg</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>Orange</string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#ffff00</string>
+		<key>images</key>
+		<array>
+			<dict>
+				<key>fileName</key>
+				<string>Yellow1.jpg</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>Yellow</string>
+	</dict>
+	<dict>
+		<key>color</key>
+		<string>#00ff00</string>
+		<key>images</key>
+		<array>
+			<dict>
+				<key>fileName</key>
+				<string>Green1.jpg</string>
+			</dict>
+		</array>
+		<key>finish</key>
+		<dict>
+			<key>label</key>
+			<string>Great Job!</string>
+			<key>fileName</key>
+			<string>go.png</string>
+		</dict>
+		<key>name</key>
+		<string>Green</string>
+	</dict>
+</array>
+</plist>

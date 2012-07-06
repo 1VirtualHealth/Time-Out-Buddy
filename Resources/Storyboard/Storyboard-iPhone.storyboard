@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2809" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QfV-XU-HxL">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1884"/>
+    </dependencies>
+    <scenes>
+        <!--Setup Controller-->
+        <scene sceneID="aER-IE-5Dz">
+            <objects>
+                <viewController id="QfV-XU-HxL" customClass="TOSetupController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fOJ-LY-0MM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="setup_background.png" id="qYd-v5-mIn"/>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="T3J-2e-Uqy" customClass="GradientButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Xiu-NL-sbs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start Time Out">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GfJ-KP-Ox8" kind="modal" identifier="launchMainSegue" id="w8q-Wl-PZR"/>
+                                </connections>
+                            </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="eA5-fh-Hrg" customClass="GradientButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PFU-2y-1Qj"/>
+                                    <constraint firstAttribute="width" constant="250" id="SAx-DO-maQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Select Age">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseAge:" destination="QfV-XU-HxL" eventType="touchUpInside" id="aI4-Lv-3iD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qYd-v5-mIn" firstAttribute="trailing" secondItem="fOJ-LY-0MM" secondAttribute="trailing" type="default" id="1Zr-CM-yqk"/>
+                            <constraint firstItem="qYd-v5-mIn" firstAttribute="leading" secondItem="fOJ-LY-0MM" secondAttribute="leading" type="default" id="6rv-6v-aaM"/>
+                            <constraint firstItem="eA5-fh-Hrg" firstAttribute="leading" secondItem="fOJ-LY-0MM" secondAttribute="leading" constant="36" id="9az-l8-eOJ"/>
+                            <constraint firstItem="T3J-2e-Uqy" firstAttribute="leading" secondItem="eA5-fh-Hrg" secondAttribute="leading" type="default" id="XxC-AQ-xhj"/>
+                            <constraint firstItem="qYd-v5-mIn" firstAttribute="top" secondItem="fOJ-LY-0MM" secondAttribute="top" type="default" id="YuR-Rv-lv8"/>
+                            <constraint firstItem="T3J-2e-Uqy" firstAttribute="trailing" secondItem="eA5-fh-Hrg" secondAttribute="trailing" type="default" id="fuT-s9-Ahb"/>
+                            <constraint firstAttribute="bottom" secondItem="T3J-2e-Uqy" secondAttribute="bottom" constant="47" id="h6v-RH-6M3"/>
+                            <constraint firstItem="qYd-v5-mIn" firstAttribute="bottom" secondItem="fOJ-LY-0MM" secondAttribute="bottom" type="default" id="iNd-e9-5n2"/>
+                            <constraint firstAttribute="bottom" secondItem="eA5-fh-Hrg" secondAttribute="bottom" constant="108" id="u2h-XA-BxP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="selectAgeButton" destination="eA5-fh-Hrg" id="WQG-QU-aJQ"/>
+                        <outlet property="startButton" destination="T3J-2e-Uqy" id="V9L-Os-YOT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qq-cC-AKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-251" y="46"/>
+        </scene>
+        <!--Main Controller-->
+        <scene sceneID="dNX-6N-cij">
+            <objects>
+                <viewController id="GfJ-KP-Ox8" customClass="TOMainController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWT-d4-bMD">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" contentMode="center" id="YfY-jI-mmK"/>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" userInteractionEnabled="NO" contentMode="scaleToFill" image="transparent_logo_small.png" id="TCn-0j-3v5"/>
+                            <label translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Label" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="EOa-5a-iPV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="4we-Kn-GJM"/>
+                                </constraints>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
+                            </label>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="3VX-Kx-XRs" customClass="GradientButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5Js-dH-OUG"/>
+                                    <constraint firstAttribute="height" constant="44" id="lrq-Kb-9Wn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="End Time Out">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="endTimeOutPressed:" destination="GfJ-KP-Ox8" eventType="touchUpInside" id="dKk-nU-xaL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EOa-5a-iPV" firstAttribute="trailing" secondItem="YWT-d4-bMD" secondAttribute="trailing" type="default" id="1ty-R1-Q3x"/>
+                            <constraint firstItem="TCn-0j-3v5" firstAttribute="leading" secondItem="YWT-d4-bMD" secondAttribute="leading" constant="3" id="N8j-Ch-UXu"/>
+                            <constraint firstItem="EOa-5a-iPV" firstAttribute="top" secondItem="YWT-d4-bMD" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Pg0-9S-QTt"/>
+                            <constraint firstItem="EOa-5a-iPV" firstAttribute="leading" secondItem="YWT-d4-bMD" secondAttribute="leading" type="default" id="QuP-cW-9Lp"/>
+                            <constraint firstItem="3VX-Kx-XRs" firstAttribute="centerX" secondItem="EOa-5a-iPV" secondAttribute="centerX" type="default" id="RNc-4Q-VNA"/>
+                            <constraint firstItem="YfY-jI-mmK" firstAttribute="trailing" secondItem="YWT-d4-bMD" secondAttribute="trailing" type="default" id="hHE-or-qof"/>
+                            <constraint firstAttribute="bottom" secondItem="3VX-Kx-XRs" secondAttribute="bottom" constant="75" id="iZd-o2-08U"/>
+                            <constraint firstItem="YfY-jI-mmK" firstAttribute="leading" secondItem="YWT-d4-bMD" secondAttribute="leading" type="default" id="o0e-8h-gir"/>
+                            <constraint firstAttribute="bottom" secondItem="TCn-0j-3v5" secondAttribute="bottom" constant="5" id="sTx-r2-nRo"/>
+                            <constraint firstItem="YfY-jI-mmK" firstAttribute="top" secondItem="YWT-d4-bMD" secondAttribute="top" type="default" id="wM5-Qw-5Ho"/>
+                            <constraint firstItem="YfY-jI-mmK" firstAttribute="bottom" secondItem="YWT-d4-bMD" secondAttribute="bottom" type="default" id="zav-SP-Soe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="endButton" destination="3VX-Kx-XRs" id="VHm-Ci-ojx"/>
+                        <outlet property="imageView" destination="YfY-jI-mmK" id="fHJ-S6-Mis"/>
+                        <outlet property="slideLabel" destination="EOa-5a-iPV" id="1mn-an-LoD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBv-IC-Ea0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="319" y="50"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="setup_background.png" width="640" height="920"/>
+        <image name="transparent_logo_small.png" width="95" height="56"/>
+    </resources>
+    <classes>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TOMainController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOMainController.h"/>
+            <relationships>
+                <relationship kind="action" name="endTimeOutPressed:"/>
+                <relationship kind="outlet" name="endButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slideLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TOSetupController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
+            <relationships>
+                <relationship kind="action" name="chooseAge:"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

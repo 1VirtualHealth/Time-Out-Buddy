@@ -10,6 +10,7 @@
 #import "TOMainController.h"
 #import "TOAgePickerView.h"
 #import "GradientButton.h"
+#import "Constants.h"
 
 @interface TOSetupController ()
 
@@ -64,7 +65,12 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    if (isPad()) {
+        return YES;
+    }
+    else {
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    }
 }
 
 - (void)setAgeButtonDisplay:(NSString *)age

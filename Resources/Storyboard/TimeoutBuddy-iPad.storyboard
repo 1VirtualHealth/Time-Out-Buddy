@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2809" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="QfV-XU-HxL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2809" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="UfP-yd-tvT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1884"/>
     </dependencies>
     <scenes>
         <!--Setup Controller-->
-        <scene sceneID="aER-IE-5Dz">
+        <scene sceneID="b1P-0Z-MAp">
             <objects>
-                <viewController id="QfV-XU-HxL" customClass="TOSetupController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fOJ-LY-0MM">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="UfP-yd-tvT" customClass="TOSetupController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Px-pp-pHO">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="setup_background.png" id="qYd-v5-mIn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="T3J-2e-Uqy" customClass="GradientButton">
-                                <rect key="frame" x="36" y="369" width="250" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="97W-da-Xym" customClass="GradientButton">
+                                <rect key="frame" x="241" y="702" width="287" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Choose Age">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseAge:" destination="UfP-yd-tvT" eventType="touchUpInside" id="Z6f-lB-hdl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="fg4-Qf-n6O" customClass="GradientButton">
+                                <rect key="frame" x="241" y="841" width="287" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Time Out">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,59 +39,50 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GfJ-KP-Ox8" kind="modal" identifier="launchMainSegue" id="w8q-Wl-PZR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="eA5-fh-Hrg" customClass="GradientButton">
-                                <rect key="frame" x="36" y="308" width="250" height="44"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Select Age">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="chooseAge:" destination="QfV-XU-HxL" eventType="touchUpInside" id="aI4-Lv-3iD"/>
+                                    <segue destination="xgs-OD-Gbb" kind="modal" identifier="launchMainSegue" id="W3E-uJ-U7b"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
-                        <outlet property="selectAgeButton" destination="eA5-fh-Hrg" id="WQG-QU-aJQ"/>
-                        <outlet property="startButton" destination="T3J-2e-Uqy" id="V9L-Os-YOT"/>
+                        <outlet property="selectAgeButton" destination="97W-da-Xym" id="elh-Ww-SjM"/>
+                        <outlet property="startButton" destination="fg4-Qf-n6O" id="H4E-r3-RKe"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8qq-cC-AKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KkC-hf-xPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-251" y="46"/>
+            <point key="canvasLocation" x="-192" y="-200"/>
         </scene>
         <!--Main Controller-->
-        <scene sceneID="dNX-6N-cij">
+        <scene sceneID="MmD-VT-zvB">
             <objects>
-                <viewController id="GfJ-KP-Ox8" customClass="TOMainController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YWT-d4-bMD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="xgs-OD-Gbb" customClass="TOMainController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyc-G7-bWV">
+                        <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" id="YfY-jI-mmK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" id="NmO-sy-tee">
+                                <rect key="frame" x="0.0" y="50" width="768" height="954"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="transparent_logo_small.png" id="TCn-0j-3v5">
-                                <rect key="frame" x="3" y="399" width="95" height="56"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="transparent_logo_small.png" id="9Vu-kz-4mw">
+                                <rect key="frame" x="10" y="933" width="95" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Label" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="EOa-5a-iPV">
-                                <rect key="frame" x="0.0" y="20" width="320" height="48"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Label" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="dDl-TT-xvN">
+                                <rect key="frame" x="10" y="3" width="748" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="3VX-Kx-XRs" customClass="GradientButton">
-                                <rect key="frame" x="60" y="341" width="200" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="CqQ-rj-Ah2" customClass="GradientButton">
+                                <rect key="frame" x="284" y="781" width="200" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="End Time Out">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -88,25 +92,25 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="endTimeOutPressed:" destination="GfJ-KP-Ox8" eventType="touchUpInside" id="dKk-nU-xaL"/>
+                                    <action selector="endTimeOutPressed:" destination="xgs-OD-Gbb" eventType="touchUpInside" id="9xX-OW-Cwg"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
-                        <outlet property="endButton" destination="3VX-Kx-XRs" id="VHm-Ci-ojx"/>
-                        <outlet property="imageView" destination="YfY-jI-mmK" id="fHJ-S6-Mis"/>
-                        <outlet property="slideLabel" destination="EOa-5a-iPV" id="1mn-an-LoD"/>
+                        <outlet property="endButton" destination="CqQ-rj-Ah2" id="Xvp-vq-S7R"/>
+                        <outlet property="imageView" destination="NmO-sy-tee" id="DBv-8L-9UF"/>
+                        <outlet property="slideLabel" destination="dDl-TT-xvN" id="Vyo-ZW-ZB2"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hBv-IC-Ea0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-nU-pTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="50"/>
+            <point key="canvasLocation" x="687" y="-340"/>
         </scene>
     </scenes>
     <resources>
-        <image name="setup_background.png" width="640" height="920"/>
         <image name="transparent_logo_small.png" width="95" height="56"/>
     </resources>
     <classes>
@@ -126,17 +130,13 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
             <relationships>
                 <relationship kind="action" name="chooseAge:"/>
-                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
                 <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
                 <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
             </relationships>
         </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>

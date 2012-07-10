@@ -10,6 +10,7 @@
 #import "TOSlideManager.h"
 #import "TOSlide.h"
 #import "GradientButton.h"
+#import "Constants.h"
 
 @interface TOMainController ()
 
@@ -68,7 +69,10 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    if (isPad())
+        return YES;
+    else
+        return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (IBAction)endTimeOutPressed:(id)sender

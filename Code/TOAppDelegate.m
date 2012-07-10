@@ -7,6 +7,7 @@
 //
 
 #import "TOAppDelegate.h"
+#import "Constants.h"
 
 @implementation TOAppDelegate
 
@@ -15,7 +16,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard-iPhone" bundle:nil];
+    UIStoryboard *storyboard;
+    if (isPad()) {
+        storyboard = [UIStoryboard storyboardWithName:@"TimeoutBuddy-iPad" bundle:nil];
+    }
+    else {
+        storyboard = [UIStoryboard storyboardWithName:@"TimeoutBuddy" bundle:nil];
+    }
+    
     self.rootController = [storyboard instantiateInitialViewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

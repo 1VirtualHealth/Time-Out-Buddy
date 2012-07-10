@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5208DB7215A7733C00052CB3 /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5208DB7115A7733C00052CB3 /* Storyboard-iPhone.storyboard */; };
+		5208DB7215A7733C00052CB3 /* TimeoutBuddy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5208DB7115A7733C00052CB3 /* TimeoutBuddy.storyboard */; };
 		5208DB7615A77F3B00052CB3 /* TOSetupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208DB7415A77F3B00052CB3 /* TOSetupController.m */; };
 		5208DB7C15A77F8D00052CB3 /* TOMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208DB7A15A77F8D00052CB3 /* TOMainController.m */; };
+		521E9CE915AC894700F65D39 /* TimeoutBuddy-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9CE815AC894700F65D39 /* TimeoutBuddy-iPad.storyboard */; };
 		524EA32115AB6D8B00FCCCB1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA31F15AB6D8B00FCCCB1 /* Icon.png */; };
 		524EA32215AB6D8B00FCCCB1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA32015AB6D8B00FCCCB1 /* Icon@2x.png */; };
 		524EA32715AB6E4600FCCCB1 /* transparent_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA32615AB6E4600FCCCB1 /* transparent_logo_small.png */; };
@@ -40,11 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5208DB7115A7733C00052CB3 /* Storyboard-iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		5208DB7115A7733C00052CB3 /* TimeoutBuddy.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimeoutBuddy.storyboard; sourceTree = "<group>"; };
 		5208DB7315A77F3B00052CB3 /* TOSetupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOSetupController.h; sourceTree = "<group>"; };
 		5208DB7415A77F3B00052CB3 /* TOSetupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOSetupController.m; sourceTree = "<group>"; };
 		5208DB7915A77F8D00052CB3 /* TOMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMainController.h; sourceTree = "<group>"; };
 		5208DB7A15A77F8D00052CB3 /* TOMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMainController.m; sourceTree = "<group>"; };
+		521E9CDF15AC85D000F65D39 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		521E9CE815AC894700F65D39 /* TimeoutBuddy-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "TimeoutBuddy-iPad.storyboard"; sourceTree = "<group>"; };
 		524EA31F15AB6D8B00FCCCB1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		524EA32015AB6D8B00FCCCB1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		524EA32615AB6E4600FCCCB1 /* transparent_logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_logo_small.png; sourceTree = "<group>"; };
@@ -103,7 +106,8 @@
 		5208DB6F15A7730A00052CB3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				5208DB7115A7733C00052CB3 /* Storyboard-iPhone.storyboard */,
+				5208DB7115A7733C00052CB3 /* TimeoutBuddy.storyboard */,
+				521E9CE815AC894700F65D39 /* TimeoutBuddy-iPad.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -144,6 +148,7 @@
 				529914FF15A7A7690035B896 /* TOSlideManager.m */,
 				5299150115A7A9980035B896 /* TOSlide.h */,
 				5299150215A7A9980035B896 /* TOSlide.m */,
+				521E9CDF15AC85D000F65D39 /* Constants.h */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -313,7 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5208DB7215A7733C00052CB3 /* Storyboard-iPhone.storyboard in Resources */,
+				5208DB7215A7733C00052CB3 /* TimeoutBuddy.storyboard in Resources */,
 				5299151915A7B2860035B896 /* Green1.jpg in Resources */,
 				5299151A15A7B2860035B896 /* Red1.jpg in Resources */,
 				5299151B15A7B2860035B896 /* Yellow1.jpg in Resources */,
@@ -327,6 +332,7 @@
 				524EA33015AB7E6C00FCCCB1 /* setup_background.png in Resources */,
 				524EA33315AB81BB00FCCCB1 /* go.png in Resources */,
 				524EA33415AB81BB00FCCCB1 /* stop.png in Resources */,
+				521E9CE915AC894700F65D39 /* TimeoutBuddy-iPad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +433,7 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -443,7 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

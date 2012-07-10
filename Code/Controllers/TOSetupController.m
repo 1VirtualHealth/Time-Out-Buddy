@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) TOAgePickerView *agePicker;
 
+- (void)setAgeButtonDisplay:(NSString *)age;
+
 @end
 
 @implementation TOSetupController
@@ -36,10 +38,12 @@
     [super viewDidLoad];
     [self.startButton useRedDeleteStyle];
     
-    [self.selectAgeButton setTitle:@"Select Age                  \u25BC" forState:UIControlStateNormal];
+    [self.selectAgeButton setTitle:@"Choose Age                  \u25BC" forState:UIControlStateNormal];
     self.agePicker = [[TOAgePickerView alloc] initWithFrame:CGRectZero];
     __weak id bSelf = self;
     self.agePicker.onPickerDone = ^() {
+        NSString *ageLabel = [self.agePicker.currentAge valueForKey:@"name"];
+        [bSelf setAgeButtonDisplay:ageLabel];
         [bSelf dismissAgePickerAnimated:YES];
     };
     
@@ -61,6 +65,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)setAgeButtonDisplay:(NSString *)age
+{
+    NSString *ageString = [NSString stringWithFormat:@"%@ years old                 \u25BC", age];
+    [self.selectAgeButton setTitle:ageString forState:UIControlStateNormal];
 }
 
 - (void)showAgePickerAnimated:(BOOL)animated
@@ -104,11 +114,6 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         };
     }
-}
-
-- (IBAction)done:(UIStoryboardSegue *)segue
-{
-    NSLog(@"Back to the beginning");
 }
 
 

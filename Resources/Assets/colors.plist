@@ -9,14 +9,28 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Red1.jpg</string>
+				<string>Red01.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Red02.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Red03.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Red04.jpg</string>
 			</dict>
 		</array>
+        <!--
 		<key>start</key>
 		<dict>
 			<key>fileName</key>
 			<string>stop.png</string>
 		</dict>
+         -->
 		<key>name</key>
 		<string>Red</string>
 	</dict>
@@ -27,7 +41,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Orange1.jpg</string>
+				<string>Orange01.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Orange02.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Orange03.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Orange04.jpg</string>
 			</dict>
 		</array>
 		<key>name</key>
@@ -40,7 +66,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Yellow1.jpg</string>
+				<string>Yellow01.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Yellow02.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Yellow03.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Yellow04.jpg</string>
 			</dict>
 		</array>
 		<key>name</key>
@@ -53,7 +91,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Green1.jpg</string>
+				<string>Green01.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Green02.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Green03.jpg</string>
+			</dict>
+			<dict>
+				<key>fileName</key>
+				<string>Green04.jpg</string>
 			</dict>
 		</array>
 		<key>finish</key>

@@ -10,7 +10,6 @@
 		5208DB7215A7733C00052CB3 /* Storyboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5208DB7115A7733C00052CB3 /* Storyboard-iPhone.storyboard */; };
 		5208DB7615A77F3B00052CB3 /* TOSetupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208DB7415A77F3B00052CB3 /* TOSetupController.m */; };
 		5208DB7C15A77F8D00052CB3 /* TOMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208DB7A15A77F8D00052CB3 /* TOMainController.m */; };
-		5208DB8115A77F9B00052CB3 /* TODoneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5208DB7F15A77F9B00052CB3 /* TODoneController.m */; };
 		524EA32115AB6D8B00FCCCB1 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA31F15AB6D8B00FCCCB1 /* Icon.png */; };
 		524EA32215AB6D8B00FCCCB1 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA32015AB6D8B00FCCCB1 /* Icon@2x.png */; };
 		524EA32715AB6E4600FCCCB1 /* transparent_logo_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA32615AB6E4600FCCCB1 /* transparent_logo_small.png */; };
@@ -46,8 +45,6 @@
 		5208DB7415A77F3B00052CB3 /* TOSetupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOSetupController.m; sourceTree = "<group>"; };
 		5208DB7915A77F8D00052CB3 /* TOMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMainController.h; sourceTree = "<group>"; };
 		5208DB7A15A77F8D00052CB3 /* TOMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMainController.m; sourceTree = "<group>"; };
-		5208DB7E15A77F9B00052CB3 /* TODoneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TODoneController.h; sourceTree = "<group>"; };
-		5208DB7F15A77F9B00052CB3 /* TODoneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TODoneController.m; sourceTree = "<group>"; };
 		524EA31F15AB6D8B00FCCCB1 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		524EA32015AB6D8B00FCCCB1 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		524EA32615AB6E4600FCCCB1 /* transparent_logo_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_logo_small.png; sourceTree = "<group>"; };
@@ -229,8 +226,6 @@
 				5208DB7415A77F3B00052CB3 /* TOSetupController.m */,
 				5208DB7915A77F8D00052CB3 /* TOMainController.h */,
 				5208DB7A15A77F8D00052CB3 /* TOMainController.m */,
-				5208DB7E15A77F9B00052CB3 /* TODoneController.h */,
-				5208DB7F15A77F9B00052CB3 /* TODoneController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,7 +359,6 @@
 				52C420A015A2848C00D70783 /* TimeOutBuddy.xcdatamodeld in Sources */,
 				5208DB7615A77F3B00052CB3 /* TOSetupController.m in Sources */,
 				5208DB7C15A77F8D00052CB3 /* TOMainController.m in Sources */,
-				5208DB8115A77F9B00052CB3 /* TODoneController.m in Sources */,
 				529914F815A78A010035B896 /* TOAgePickerView.m in Sources */,
 				5299150015A7A7690035B896 /* TOSlideManager.m in Sources */,
 				5299150315A7A9980035B896 /* TOSlide.m in Sources */,

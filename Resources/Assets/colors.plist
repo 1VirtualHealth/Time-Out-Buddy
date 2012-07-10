@@ -3,6 +3,11 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>start</key>
+		<dict>
+			<key>fileName</key>
+			<string>stop.png</string>
+		</dict>
 		<key>color</key>
 		<string>#ff0000</string>
 		<key>images</key>
@@ -24,13 +29,6 @@
 				<string>Red04.jpg</string>
 			</dict>
 		</array>
-        <!--
-		<key>start</key>
-		<dict>
-			<key>fileName</key>
-			<string>stop.png</string>
-		</dict>
-         -->
 		<key>name</key>
 		<string>Red</string>
 	</dict>

@@ -49,7 +49,6 @@
 		52C4207E15A2830F00D70783 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C4207D15A2830F00D70783 /* CoreData.framework */; };
 		52C4209A15A2847B00D70783 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4209615A2847B00D70783 /* main.m */; };
 		52C4209B15A2847B00D70783 /* TOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C4209915A2847B00D70783 /* TOAppDelegate.m */; };
-		52C420A015A2848C00D70783 /* TimeOutBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52C4209D15A2848C00D70783 /* TimeOutBuddy.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -345,9 +344,9 @@
 			buildConfigurationList = 52C4209015A2830F00D70783 /* Build configuration list for PBXNativeTarget "TimeOutBuddy" */;
 			buildPhases = (
 				52C4206F15A2830F00D70783 /* Sources */,
+				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 				52C4207015A2830F00D70783 /* Frameworks */,
 				52C4207115A2830F00D70783 /* Resources */,
-				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -435,7 +434,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$build_number=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Resources/Info.plist`\nbuild_number=$(($build_number+1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" Resources/Info.plist";
+			shellScript = "#!/bin/zsh\n$build_number=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Resources/Info.plist`\nbuild_number=$(($build_number + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" Resources/Info.plist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -446,7 +445,6 @@
 			files = (
 				52C4209A15A2847B00D70783 /* main.m in Sources */,
 				52C4209B15A2847B00D70783 /* TOAppDelegate.m in Sources */,
-				52C420A015A2848C00D70783 /* TimeOutBuddy.xcdatamodeld in Sources */,
 				5208DB7615A77F3B00052CB3 /* TOSetupController.m in Sources */,
 				5208DB7C15A77F8D00052CB3 /* TOMainController.m in Sources */,
 				529914F815A78A010035B896 /* TOAgePickerView.m in Sources */,

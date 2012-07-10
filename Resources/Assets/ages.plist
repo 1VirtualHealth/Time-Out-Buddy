@@ -8,7 +8,15 @@
 		<key>duration</key>
 		<integer>30</integer>
 		<key>name</key>
-		<string>0-3</string>
+		<string>2</string>
+	</dict>
+	<dict>
+		<key>displayCount</key>
+		<integer>2</integer>
+		<key>duration</key>
+		<integer>180</integer>
+		<key>name</key>
+		<string>3</string>
 	</dict>
 	<dict>
 		<key>displayCount</key>

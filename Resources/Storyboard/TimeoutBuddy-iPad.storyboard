@@ -63,8 +63,8 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" id="NmO-sy-tee">
-                                <rect key="frame" x="0.0" y="50" width="768" height="954"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="NmO-sy-tee">
+                                <rect key="frame" x="0.0" y="15" width="768" height="974"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="transparent_logo_small.png" id="9Vu-kz-4mw">

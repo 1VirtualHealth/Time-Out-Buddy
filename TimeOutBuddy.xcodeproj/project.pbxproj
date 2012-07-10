@@ -275,6 +275,7 @@
 				52C4206F15A2830F00D70783 /* Sources */,
 				52C4207015A2830F00D70783 /* Frameworks */,
 				52C4207115A2830F00D70783 /* Resources */,
+				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -335,6 +336,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		521E9CC315ABC45500F65D39 /* Increment Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Increment Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$build_number=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Resources/Info.plist`\nbuild_number=$(($build_number+1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" Resources/Info.plist";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52C4206F15A2830F00D70783 /* Sources */ = {
@@ -423,12 +441,14 @@
 		52C4209215A2830F00D70783 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Code/Main/TimeOutBuddy-Prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -65,12 +65,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if (isPad()) {
-        return YES;
-    }
-    else {
-        return (interfaceOrientation == UIInterfaceOrientationPortrait);
-    }
+    return YES;
 }
 
 - (void)setAgeButtonDisplay:(NSString *)age

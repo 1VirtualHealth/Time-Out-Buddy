@@ -64,8 +64,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" id="NmO-sy-tee">
-                                <rect key="frame" x="0.0" y="15" width="768" height="974"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="frame" x="0.0" y="111" width="768" height="768"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="transparent_logo_small.png" id="9Vu-kz-4mw">
                                 <rect key="frame" x="10" y="933" width="95" height="56"/>
@@ -81,7 +81,7 @@
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="CqQ-rj-Ah2" customClass="GradientButton">
-                                <rect key="frame" x="284" y="781" width="200" height="44"/>
+                                <rect key="frame" x="284" y="894" width="200" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="End Time Out">
@@ -113,6 +113,28 @@
     <resources>
         <image name="transparent_logo_small.png" width="95" height="56"/>
     </resources>
+    <classes>
+        <class className="GradientButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="TOMainController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOMainController.h"/>
+            <relationships>
+                <relationship kind="action" name="endTimeOutPressed:"/>
+                <relationship kind="outlet" name="endButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="slideLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TOSetupController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
+            <relationships>
+                <relationship kind="action" name="chooseAge:"/>
+                <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
+                <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

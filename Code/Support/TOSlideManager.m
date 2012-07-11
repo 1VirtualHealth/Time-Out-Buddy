@@ -148,8 +148,9 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        NSSet *colorImages = [NSSet setWithArray:[colorGroup objectForKey:@"images"]];
-        NSDictionary *candidate = [colorImages anyObject];
+        NSUInteger randomIndex = arc4random() % [colorGroup count];
+        NSArray *colorImages = [colorGroup objectForKey:@"images"];
+        NSDictionary *candidate = [colorImages objectAtIndex:randomIndex];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         label = [candidate valueForKey:@"label"];
     }

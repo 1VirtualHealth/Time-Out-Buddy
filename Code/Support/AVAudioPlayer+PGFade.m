@@ -86,6 +86,7 @@ ASSOCIATIVE_PROPERTY_OBJ_COPY(fadeCompletion,       setFadeCompletion,          
         // Volume change is close enough, just go there immediately
         self.volume = targetVolume;
         if(completion) completion();
+        completion = nil;
         return;
     }
 

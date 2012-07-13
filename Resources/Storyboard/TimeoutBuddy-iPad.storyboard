@@ -12,7 +12,11 @@
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="97W-da-Xym" customClass="GradientButton">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="home-ipad.jpg" id="CVV-fl-FJ9">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="97W-da-Xym" customClass="GradientButton">
                                 <rect key="frame" x="241" y="702" width="287" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -27,7 +31,7 @@
                                     <action selector="chooseAge:" destination="UfP-yd-tvT" eventType="touchUpInside" id="Z6f-lB-hdl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="fg4-Qf-n6O" customClass="GradientButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fg4-Qf-n6O" customClass="GradientButton">
                                 <rect key="frame" x="241" y="841" width="287" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -42,6 +46,10 @@
                                     <segue destination="xgs-OD-Gbb" kind="modal" identifier="launchMainSegue" id="W3E-uJ-U7b"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tcC-y5-H2R">
+                                <rect key="frame" x="264" y="423" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -80,7 +88,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hasAttributedTitle="NO" lineBreakMode="middleTruncation" id="CqQ-rj-Ah2" customClass="GradientButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CqQ-rj-Ah2" customClass="GradientButton">
                                 <rect key="frame" x="284" y="894" width="200" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -111,30 +119,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home-ipad.jpg" width="768" height="1024"/>
         <image name="transparent_logo_small.png" width="95" height="56"/>
     </resources>
-    <classes>
-        <class className="GradientButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
-        </class>
-        <class className="TOMainController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOMainController.h"/>
-            <relationships>
-                <relationship kind="action" name="endTimeOutPressed:"/>
-                <relationship kind="outlet" name="endButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="slideLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TOSetupController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
-            <relationships>
-                <relationship kind="action" name="chooseAge:"/>
-                <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

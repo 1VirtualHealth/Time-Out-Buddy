@@ -49,15 +49,6 @@
         self.colorGroups = [NSArray arrayWithContentsOfFile:colorPath];
         
      
-        /*
-        self.slides = @[
-        [TOSlide slideWithImage:[UIImage imageNamed:@"Red1.jpg"] color:[UIColor redColor]],
-        [TOSlide slideWithImage:[UIImage imageNamed:@"Orange1.jpg"] color:[UIColor orangeColor]],
-        [TOSlide slideWithImage:[UIImage imageNamed:@"Yellow1.jpg"] color:[UIColor yellowColor]],
-        [TOSlide slideWithImage:[UIImage imageNamed:@"Green1.jpg"] color:[UIColor greenColor]]
-        ];
-        self.slideInterval = 5.0;
-        */
         NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"background" ofType:@"mp3"]];
         
         self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];

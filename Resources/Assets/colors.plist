@@ -14,19 +14,15 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Red01.jpg</string>
+				<string>AK-Color-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Red02.jpg</string>
+				<string>Denali-Red-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Red03.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Red04.jpg</string>
+				<string>Hummingbird-768.jpg</string>
 			</dict>
 		</array>
 		<key>name</key>
@@ -39,19 +35,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Orange01.jpg</string>
+				<string>Baby-Eyes-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Orange02.jpg</string>
+				<string>Crab-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Orange03.jpg</string>
+				<string>Duck-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Orange04.jpg</string>
+				<string>Glow-768.jpg</string>
 			</dict>
 		</array>
 		<key>name</key>
@@ -64,19 +60,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Yellow01.jpg</string>
+				<string>Baby-Seal-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Yellow02.jpg</string>
+				<string>Ino-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Yellow03.jpg</string>
+				<string>Jackson-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Yellow04.jpg</string>
+				<string>Seal-768.jpg</string>
 			</dict>
 		</array>
 		<key>name</key>
@@ -89,19 +85,19 @@
 		<array>
 			<dict>
 				<key>fileName</key>
-				<string>Green01.jpg</string>
+				<string>AK-Rivve-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Green02.jpg</string>
+				<string>Dog-Ball-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Green03.jpg</string>
+				<string>Frog-768.jpg</string>
 			</dict>
 			<dict>
 				<key>fileName</key>
-				<string>Green04.jpg</string>
+				<string>Pools-768.jpg</string>
 			</dict>
 		</array>
 		<key>finish</key>

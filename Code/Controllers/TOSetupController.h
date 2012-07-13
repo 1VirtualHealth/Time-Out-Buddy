@@ -15,6 +15,9 @@
 
 @property (nonatomic, strong) IBOutlet GradientButton *startButton;
 @property (nonatomic, strong) IBOutlet GradientButton *selectAgeButton;
+
+
+
 - (IBAction)chooseAge:(id)sender;
 
 @end

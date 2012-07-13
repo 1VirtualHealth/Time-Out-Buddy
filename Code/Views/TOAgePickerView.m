@@ -22,9 +22,11 @@
 @synthesize currentAge = _currentAge;
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:CGRectMake(0,0,320,244)];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    self = [super initWithFrame:CGRectMake(0,0,CGRectGetWidth(screenRect),244)];
     if (self) {
-        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+        UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(self.bounds),44)];
+        toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         toolbar.tintColor = [UIColor blackColor];
         UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
         
@@ -32,12 +34,14 @@
         
         [toolbar setItems:@[flexSpace, done]];
         
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         [self addSubview:toolbar];
         
         NSString *ageFile = [[NSBundle mainBundle] pathForResource:@"ages" ofType:@"plist"];
         self.ages = [NSArray arrayWithContentsOfFile:ageFile];
         self.currentAge = [self.ages objectAtIndex:0];
-        self.agePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,44,320, 200)];
+        self.agePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,44,CGRectGetWidth(self.bounds), 200)];
+        self.agePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         self.agePicker.dataSource = self;
         self.agePicker.delegate = self;
         self.agePicker.showsSelectionIndicator = YES;

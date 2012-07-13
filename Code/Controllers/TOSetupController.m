@@ -17,7 +17,7 @@
 @property (strong, nonatomic) TOAgePickerView *agePicker;
 
 - (void)setAgeButtonDisplay:(NSString *)age;
-
+- (void)populateVersionLabel;
 @end
 
 @implementation TOSetupController
@@ -25,6 +25,7 @@
 @synthesize agePicker = _agePicker;
 @synthesize startButton = _startButton;
 @synthesize selectAgeButton = _selectAgeButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,10 +35,19 @@
     return self;
 }
 
+- (void)populateVersionLabel
+{
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *label = [NSString stringWithFormat:@"%@ (%@)", [infoDict valueForKey:@"CFBundleShortVersionString"], [infoDict valueForKey:@"CFBundleVersion"]];
+    NSLog(label);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.startButton useRedDeleteStyle];
+    
+    [self populateVersionLabel];
     
     [self.selectAgeButton setTitle:@"Choose Age                  \u25BC" forState:UIControlStateNormal];
     self.agePicker = [[TOAgePickerView alloc] initWithFrame:CGRectZero];

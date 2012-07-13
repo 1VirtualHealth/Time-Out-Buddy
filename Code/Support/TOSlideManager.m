@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVAudioPlayer+PGFade.h"
 #import "UIColor+Additions.h"
+#import "NSArray+TOAdditions.h"
 
 @interface TOSlideManager()
 
@@ -139,9 +140,8 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        NSUInteger randomIndex = arc4random() % [colorGroup count];
         NSArray *colorImages = [colorGroup objectForKey:@"images"];
-        NSDictionary *candidate = [colorImages objectAtIndex:randomIndex];
+        NSDictionary *candidate = [colorImages randomObject];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         label = [candidate valueForKey:@"label"];
     }

@@ -10,53 +10,6 @@
 		</dict>
 		<key>color</key>
 		<string>#ff0000</string>
-		<key>images</key>
-		<array>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0001_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0016_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0056_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0111_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0119_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0155_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0176_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_9915_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_9918_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_9930_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Hummingbird-768.jpg</string>
-			</dict>
-		</array>
 		<key>name</key>
 		<string>Red</string>
 	</dict>

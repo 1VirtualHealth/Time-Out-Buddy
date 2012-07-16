@@ -16,6 +16,7 @@
 @interface TOSlideManager()
 
 @property (nonatomic, strong) NSArray *colorGroups;
+@property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) NSTimer *slideTimer;
 @property (nonatomic, assign) NSTimeInterval slideInterval;
@@ -31,6 +32,7 @@
 @implementation TOSlideManager
 
 @synthesize ageGroup = _ageGroup;
+@synthesize images = _images;
 @synthesize onTick = _onTick;
 @synthesize onComplete = _onComplete;
 @synthesize slideTimer = _slideTimer;
@@ -49,6 +51,8 @@
         NSString *colorPath = [[NSBundle mainBundle] pathForResource:@"colors" ofType:@"plist"];
         self.colorGroups = [NSArray arrayWithContentsOfFile:colorPath];
         
+        NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
+        self.images = [NSArray arrayWithContentsOfFile:imagesPath];
      
         NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"background" ofType:@"mp3"]];
         
@@ -140,8 +144,7 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        NSArray *colorImages = [colorGroup objectForKey:@"images"];
-        NSDictionary *candidate = [colorImages randomObject];
+        NSDictionary *candidate = [self.images randomObject];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         label = [candidate valueForKey:@"label"];
     }

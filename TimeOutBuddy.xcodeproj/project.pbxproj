@@ -69,6 +69,7 @@
 		52594A6915AF992F0014BF86 /* home-ipad@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6515AF992F0014BF86 /* home-ipad@2x.jpg */; };
 		52594A6A15AF992F0014BF86 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6615AF992F0014BF86 /* home.jpg */; };
 		52594A6B15AF992F0014BF86 /* home@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6715AF992F0014BF86 /* home@2x.jpg */; };
+		52823E7B15B44D8A00E58978 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52823E7A15B44D8A00E58978 /* images.plist */; };
 		5295ECEA15AF9A94008F7670 /* transparent_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5295ECE915AF9A94008F7670 /* transparent_logo.png */; };
 		5295ED9615B078B9008F7670 /* colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5295ED9515B078B9008F7670 /* colors.plist */; };
 		529914F815A78A010035B896 /* TOAgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529914F715A78A010035B896 /* TOAgePickerView.m */; };
@@ -155,6 +156,7 @@
 		52594A6515AF992F0014BF86 /* home-ipad@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-ipad@2x.jpg"; sourceTree = "<group>"; };
 		52594A6615AF992F0014BF86 /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpg; sourceTree = "<group>"; };
 		52594A6715AF992F0014BF86 /* home@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home@2x.jpg"; sourceTree = "<group>"; };
+		52823E7A15B44D8A00E58978 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
 		5295ECE915AF9A94008F7670 /* transparent_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_logo.png; sourceTree = "<group>"; };
 		5295ED9515B078B9008F7670 /* colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors.plist; sourceTree = "<group>"; };
 		529914F615A78A010035B896 /* TOAgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOAgePickerView.h; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				5299151E15A7BC0E0035B896 /* background.mp3 */,
 				52BF99B615AB3B4F00BC512B /* ages.plist */,
 				5295ED9515B078B9008F7670 /* colors.plist */,
+				52823E7A15B44D8A00E58978 /* images.plist */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				366AF6E115B34C3F00FD7247 /* IMG_0442_768p.jpg in Resources */,
 				366AF6E215B34C3F00FD7247 /* Mask-768.jpg in Resources */,
 				366AF6E315B34C3F00FD7247 /* Sammy-768.jpg in Resources */,
+				52823E7B15B44D8A00E58978 /* images.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

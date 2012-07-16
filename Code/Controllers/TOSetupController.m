@@ -59,7 +59,7 @@
     };
     
     //place the agePicker at the bottom
-    CGRect ageFrame = CGRectMake(0, CGRectGetHeight(self.view.bounds) - CGRectGetHeight(self.agePicker.frame), CGRectGetWidth(self.agePicker.frame), CGRectGetHeight(self.agePicker.frame));
+    CGRect ageFrame = CGRectMake(0, CGRectGetMinY(self.view.frame) + CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.agePicker.frame), CGRectGetWidth(self.agePicker.frame), CGRectGetHeight(self.agePicker.frame));
     self.agePicker.frame = ageFrame;
     [self.view addSubview:self.agePicker];
     
@@ -90,10 +90,8 @@
         [UIView beginAnimations:@"slideIn" context:nil];
     }
     
-    self.agePicker.frame = CGRectMake(0,
-                                      CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.agePicker.frame) + CGRectGetMinY(self.view.frame),
-                                      CGRectGetWidth(self.agePicker.frame),
-                                      CGRectGetHeight(self.agePicker.frame));
+    self.agePicker.frame = CGRectOffset(self.agePicker.frame, 0, -CGRectGetHeight(self.agePicker.frame));
+
     
     if (animated) {
         [UIView commitAnimations];
@@ -106,10 +104,8 @@
         [UIView beginAnimations:@"slideOut" context:nil];
     }
     
-    self.agePicker.frame = CGRectMake(0,
-                                      CGRectGetHeight(self.view.frame) + CGRectGetMinY(self.view.frame),
-                                      CGRectGetWidth(self.agePicker.frame),
-                                      CGRectGetHeight(self.agePicker.frame));
+    self.agePicker.frame = CGRectOffset(self.agePicker.frame, 0, CGRectGetHeight(self.agePicker.frame));
+
     
     if (animated) {
         [UIView commitAnimations];

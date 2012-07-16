@@ -144,7 +144,13 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        NSDictionary *candidate = [self.images randomObject];
+        //From the images generate the age predicate
+        NSInteger age = [[self.ageGroup valueForKey:@"age"] intValue];
+        NSPredicate *agePredicate = [NSPredicate predicateWithFormat:@"ageFilter == NULL OR (ageFilter.minimum <= %d AND ageFilter.maximum >= %d)", age, age];
+        NSArray *filteredArray = [self.images filteredArrayUsingPredicate:agePredicate];
+        
+        
+        NSDictionary *candidate = [filteredArray randomObject];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         label = [candidate valueForKey:@"label"];
     }

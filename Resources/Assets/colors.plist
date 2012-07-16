@@ -16,114 +16,12 @@
 	<dict>
 		<key>color</key>
 		<string>#ffa500</string>
-		<key>images</key>
-		<array>
-			<dict>
-				<key>fileName</key>
-				<string>Baby-Eyes-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Crab-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Dolphin-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Duck-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Goat-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0465_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0506_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0520_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Orange-Dog-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Pier-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>PR-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Tank-768.jpg</string>
-			</dict>
-		</array>
 		<key>name</key>
 		<string>Orange</string>
 	</dict>
 	<dict>
 		<key>color</key>
 		<string>#ffff00</string>
-		<key>images</key>
-		<array>
-			<dict>
-				<key>fileName</key>
-				<string>Baby-Seal-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Barking-seals-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Dog-Blue-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0186_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0222_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0271_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Ino-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Ino-Eyes-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Jackson-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Seal-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Seals-faces-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Soft-Flower-768.jpg</string>
-			</dict>
-		</array>
 		<key>name</key>
 		<string>Yellow</string>
 	</dict>
@@ -132,50 +30,7 @@
 		<string>#00ff00</string>
 		<key>images</key>
 		<array>
-			<dict>
-				<key>fileName</key>
-				<string>Boy-Dog-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Dog-Ball-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Dog-Face-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Dog-running-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Frog-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Horse-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0359_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0391_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>IMG_0442_768p.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Mask-768.jpg</string>
-			</dict>
-			<dict>
-				<key>fileName</key>
-				<string>Sammy-768.jpg</string>
-			</dict>
+
 		</array>
 		<key>finish</key>
 		<dict>

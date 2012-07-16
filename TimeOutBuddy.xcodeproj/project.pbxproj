@@ -367,7 +367,6 @@
 		52C4206815A2830F00D70783 = {
 			isa = PBXGroup;
 			children = (
-				5299152015A7BC2F0035B896 /* AVFoundation.framework */,
 				52C420A215A2849200D70783 /* Resources */,
 				52C4209315A2847B00D70783 /* Code */,
 				52C4207615A2830F00D70783 /* Frameworks */,
@@ -386,6 +385,7 @@
 		52C4207615A2830F00D70783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5299152015A7BC2F0035B896 /* AVFoundation.framework */,
 				52C4207715A2830F00D70783 /* UIKit.framework */,
 				52C4207915A2830F00D70783 /* Foundation.framework */,
 				52C4207B15A2830F00D70783 /* CoreGraphics.framework */,

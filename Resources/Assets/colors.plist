@@ -13,7 +13,7 @@
 		<key>name</key>
 		<string>Red</string>
 		<key>rate</key>
-		<integer>5</integer>
+		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>color</key>
@@ -21,7 +21,7 @@
 		<key>name</key>
 		<string>Orange</string>
 		<key>rate</key>
-		<integer>8</integer>
+		<integer>5</integer>
 	</dict>
 	<dict>
 		<key>color</key>
@@ -29,7 +29,7 @@
 		<key>name</key>
 		<string>Yellow</string>
 		<key>rate</key>
-		<integer>11</integer>
+		<integer>7</integer>
 	</dict>
 	<dict>
 		<key>color</key>
@@ -48,7 +48,7 @@
 		<key>name</key>
 		<string>Green</string>
 		<key>rate</key>
-		<integer>14</integer>
+		<integer>9</integer>
 	</dict>
 </array>
 </plist>

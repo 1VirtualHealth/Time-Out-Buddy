@@ -79,6 +79,9 @@
 		5299150315A7A9980035B896 /* TOSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299150215A7A9980035B896 /* TOSlide.m */; };
 		5299152115A7BC2F0035B896 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5299152015A7BC2F0035B896 /* AVFoundation.framework */; };
 		5299152815A7BEB80035B896 /* AVAudioPlayer+PGFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */; };
+		52A57F5015B779130050C53C /* Frog.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F4D15B779130050C53C /* Frog.aiff */; };
+		52A57F5115B779130050C53C /* Ping.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F4E15B779130050C53C /* Ping.aiff */; };
+		52A57F5215B779130050C53C /* Purr.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F4F15B779130050C53C /* Purr.aiff */; };
 		52BF99B715AB3B4F00BC512B /* ages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52BF99B615AB3B4F00BC512B /* ages.plist */; };
 		52BF99BD15AB4EC600BC512B /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */; };
 		52C4207815A2830F00D70783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C4207715A2830F00D70783 /* UIKit.framework */; };
@@ -171,6 +174,9 @@
 		5299152015A7BC2F0035B896 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5299152615A7BEB80035B896 /* AVAudioPlayer+PGFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+PGFade.h"; sourceTree = "<group>"; };
 		5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+PGFade.m"; sourceTree = "<group>"; };
+		52A57F4D15B779130050C53C /* Frog.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Frog.aiff; sourceTree = "<group>"; };
+		52A57F4E15B779130050C53C /* Ping.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Ping.aiff; sourceTree = "<group>"; };
+		52A57F4F15B779130050C53C /* Purr.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Purr.aiff; sourceTree = "<group>"; };
 		52BF99B615AB3B4F00BC512B /* ages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ages.plist; sourceTree = "<group>"; };
 		52BF99BB15AB4EC600BC512B /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 		368F3FD315B69A2E004084E7 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				52A57F4D15B779130050C53C /* Frog.aiff */,
+				52A57F4E15B779130050C53C /* Ping.aiff */,
+				52A57F4F15B779130050C53C /* Purr.aiff */,
 				368F3FD415B69A2E004084E7 /* background.mp3 */,
 			);
 			path = Audio;
@@ -549,6 +558,9 @@
 				368F403215B69BB0004084E7 /* 8-10-Spi-768.jpg in Resources */,
 				368F403315B69BB0004084E7 /* 8-10-Swans-768.jpg in Resources */,
 				368F403415B69BB0004084E7 /* 8-10-Yak-768.jpg in Resources */,
+				52A57F5015B779130050C53C /* Frog.aiff in Resources */,
+				52A57F5115B779130050C53C /* Ping.aiff in Resources */,
+				52A57F5215B779130050C53C /* Purr.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

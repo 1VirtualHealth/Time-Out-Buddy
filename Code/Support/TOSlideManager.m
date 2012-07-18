@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *colorGroups;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *slides;
+@property (nonatomic, strong) NSDictionary *audio;
 @property (nonatomic, strong) NSTimer *slideTimer;
 @property (nonatomic, assign) NSTimeInterval slideInterval;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
@@ -49,6 +50,7 @@
 @synthesize colorIndex = _colorIndex;
 
 @synthesize  colorGroups = _colorGroups;
+@synthesize audio = _audio;
 
 - (id)init
 {
@@ -61,8 +63,13 @@
         NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
         self.images = [NSArray arrayWithContentsOfFile:imagesPath];
      
-        NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"background" ofType:@"mp3"]];
         
+        NSString *audioPath  = [[NSBundle mainBundle] pathForResource:@"audio" ofType:@"plist"];
+        self.audio = [NSDictionary dictionaryWithContentsOfFile:audioPath];
+        
+        NSString *backgroundAudio = [self.audio valueForKey:@"background"];
+        
+        NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:backgroundAudio ofType:nil]];
         self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
         self.audioPlayer.numberOfLoops = -1;
         self.audioPlayer.volume = 1.0;

@@ -14,16 +14,23 @@
 #import "NSArray+TOAdditions.h"
 
 
+#define kAudioStartupDelay 5.0
+#define kDimmingVolume 0.3
 
-@interface TOSlideManager()
+@interface TOSlideManager()<AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) NSArray *colorGroups;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) NSDictionary *audio;
+
+@property (nonatomic, strong) NSTimer *audioTimer;
 @property (nonatomic, strong) NSTimer *slideTimer;
+
 @property (nonatomic, assign) NSTimeInterval slideInterval;
+
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) AVAudioPlayer *backgroundPlayer;
 
 @property (nonatomic, assign) NSInteger colorIndex;
 @property (nonatomic, assign) NSInteger slideIndex;
@@ -31,6 +38,7 @@
 
 - (void)handleTimer:(NSTimer *)timer;
 - (void)calculateSlideInterval;
+
 @end
 
 
@@ -43,6 +51,8 @@
 @synthesize onTick = _onTick;
 @synthesize onComplete = _onComplete;
 @synthesize slideTimer = _slideTimer;
+@synthesize audioTimer = _audioTimer;
+
 @synthesize slideInterval = _slideInterval;
 
 @synthesize slideCount = _slideCount;
@@ -51,6 +61,9 @@
 
 @synthesize  colorGroups = _colorGroups;
 @synthesize audio = _audio;
+
+@synthesize audioPlayer = _audioPlayer;
+@synthesize backgroundPlayer = _backgroundPlayer;
 
 - (id)init
 {
@@ -70,9 +83,9 @@
         NSString *backgroundAudio = [self.audio valueForKey:@"background"];
         
         NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:backgroundAudio ofType:nil]];
-        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
-        self.audioPlayer.numberOfLoops = -1;
-        self.audioPlayer.volume = 1.0;
+        self.backgroundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+        self.backgroundPlayer.numberOfLoops = -1;
+        self.backgroundPlayer.volume = 1.0;
         
     }
     
@@ -95,7 +108,7 @@
     self.slideCount = floor(timePerColor/rate);
     self.slideInterval = (NSTimeInterval)timePerColor / self.slideCount;
     
-
+    
 }
 
 - (void)start
@@ -106,6 +119,8 @@
 
     [self resume];
     [self handleTimer:nil] ;// Prime the pump
+    
+    self.audioTimer = [NSTimer scheduledTimerWithTimeInterval:kAudioStartupDelay target:self selector:@selector(firstAudioRun:) userInfo:nil repeats:NO];
 
 }
 
@@ -113,7 +128,7 @@
 {
     [self.slideTimer invalidate];
     self.slideTimer = nil;
-    [self.audioPlayer stopWithFadeDuration:2.0];
+    [self.backgroundPlayer stopWithFadeDuration:2.0];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 
 }
@@ -126,7 +141,7 @@
                                                      selector:@selector(handleTimer:)
                                                      userInfo:nil
                                                       repeats:YES];
-    [self.audioPlayer play];
+    [self.backgroundPlayer play];
 }
 
 - (void)stop
@@ -135,6 +150,24 @@
     _onComplete();
 }
 
+- (void)firstAudioRun:(NSTimer *)timer
+{
+    self.audioTimer = nil;
+    
+    NSString *startAudio = [self.audio valueForKey:@"start"];
+    if (startAudio) {
+        NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:startAudio ofType:nil]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+        self.audioPlayer.numberOfLoops = 0;
+        self.audioPlayer.volume = 1.0;
+        
+        self.audioPlayer.delegate = self;
+        self.backgroundPlayer.volume = kDimmingVolume;
+        
+        [self.audioPlayer play];
+        
+    }
+}
 
 - (void)handleTimer:(NSTimer *)timer
 {
@@ -190,6 +223,16 @@
     _onTick(slide);
     self.slideIndex++;
 
+}
+
+#pragma mark - AVAudioPlayerDelegate methods
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    if ( player == self.audioPlayer) {
+        self.backgroundPlayer.volume = 1.0;
+    }
+    
 }
 
 @end

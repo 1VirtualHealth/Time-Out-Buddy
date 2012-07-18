@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
 	<dict>
@@ -8,197 +8,516 @@
 			<key>maximum</key>
 			<integer>10</integer>
 			<key>minimum</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>fileName</key>
-		<string>IMG_0001_768p.jpg</string>
+		<string>3-10-Cat-768.jpg</string>
 	</dict>
 	<dict>
 		<key>ageFilter</key>
 		<dict>
-			<key>minimum</key>
-			<integer>2</integer>
 			<key>maximum</key>
-			<integer>4</integer>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>3</integer>
 		</dict>
 		<key>fileName</key>
-		<string>IMG_0016_768p.jpg</string>
+		<string>3-10-Wigglebottom-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0056_768p.jpg</string>
+		<string>3-5-BabySeal-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0111_768p.jpg</string>
+		<string>3-5-Bunny-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0119_768p.jpg</string>
+		<string>3-5-Bunny2-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0155_768p.jpg</string>
+		<string>3-5-Bunny3-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0176_768p.jpg</string>
+		<string>3-5-Duck-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_9915_768p.jpg</string>
+		<string>3-5-Goat-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_9918_768p.jpg</string>
+		<string>3-5-Goat2-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_9930_768p.jpg</string>
+		<string>3-5-goat3-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Hummingbird-768.jpg</string>
+		<string>3-5-Husky-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Baby-Eyes-768.jpg</string>
+		<string>3-5-InoEyes-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Crab-768.jpg</string>
+		<string>3-5-Sammy-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>5</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Dolphin-768.jpg</string>
+		<string>3-5-Wolf-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Duck-768.jpg</string>
+		<string>3-7-DogBlue-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Goat-768.jpg</string>
+		<string>3-7-DogFace-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0465_768p.jpg</string>
+		<string>3-7-Dolphin-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0506_768p.jpg</string>
+		<string>3-7-Fox-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>IMG_0520_768p.jpg</string>
+		<string>3-7-GoatSky-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Orange-Dog-768.jpg</string>
+		<string>3-7-Sealsfaces-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>3</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Pier-768.jpg</string>
+		<string>3-7-SoftFlower-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
 		<key>fileName</key>
-		<string>PR-768.jpg</string>
+		<string>6-10-Dogrunning-768.jpg</string>
 	</dict>
 	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
 		<key>fileName</key>
-		<string>Tank-768.jpg</string>
+		<string>6-7-BillyG-768.jpg</string>
 	</dict>
-    <dict>
-        <key>fileName</key>
-        <string>Baby-Seal-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Barking-seals-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Dog-Blue-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0186_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0222_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0271_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Ino-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Ino-Eyes-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Jackson-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Seal-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Seals-faces-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Soft-Flower-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Boy-Dog-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Dog-Ball-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Dog-Face-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Dog-running-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Frog-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Horse-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0359_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0391_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>IMG_0442_768p.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Mask-768.jpg</string>
-    </dict>
-    <dict>
-        <key>fileName</key>
-        <string>Sammy-768.jpg</string>
-    </dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-BoyDog-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-DogBall-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-Redseal-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-rooster-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-Seal-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>7</integer>
+			<key>minimum</key>
+			<integer>6</integer>
+		</dict>
+		<key>fileName</key>
+		<string>6-7-White-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Barking-seals-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Bied4-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Bird-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Crab-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Horse-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-horse2-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-horse3-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-horse4-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Hummingbird-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Lab-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Lion-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-OrangeDog-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Purple-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-River-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Sailboat-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Spi-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Swans-768.jpg</string>
+	</dict>
+	<dict>
+		<key>ageFilter</key>
+		<dict>
+			<key>maximum</key>
+			<integer>10</integer>
+			<key>minimum</key>
+			<integer>8</integer>
+		</dict>
+		<key>fileName</key>
+		<string>8-10-Yak-768.jpg</string>
+	</dict>
 </array>
 </plist>

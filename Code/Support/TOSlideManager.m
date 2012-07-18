@@ -13,6 +13,8 @@
 #import "UIColor+Additions.h"
 #import "NSArray+TOAdditions.h"
 
+
+
 @interface TOSlideManager()
 
 @property (nonatomic, strong) NSArray *colorGroups;
@@ -24,10 +26,14 @@
 
 @property (nonatomic, assign) NSInteger colorIndex;
 @property (nonatomic, assign) NSInteger slideIndex;
+@property (nonatomic, assign) NSInteger slideCount;
 
 - (void)handleTimer:(NSTimer *)timer;
-
+- (void)calculateSlideInterval;
 @end
+
+
+
 
 @implementation TOSlideManager
 
@@ -38,6 +44,7 @@
 @synthesize slideTimer = _slideTimer;
 @synthesize slideInterval = _slideInterval;
 
+@synthesize slideCount = _slideCount;
 @synthesize slideIndex = _slideIndex;
 @synthesize colorIndex = _colorIndex;
 
@@ -65,19 +72,31 @@
     return self;
 }
 
-- (void)start
+
+- (void)calculateSlideInterval
 {
+
     //figure out the slide interval
     NSInteger totalDuration = [[self.ageGroup valueForKey:@"duration"] intValue];
-    NSInteger displayCount = [[self.ageGroup valueForKey:@"displayCount"] intValue];
     NSInteger colorCount = [self.colorGroups count];
+
+    NSTimeInterval timePerColor = (NSTimeInterval)totalDuration/colorCount;
     
-    self.slideInterval = totalDuration / ((float)displayCount * colorCount);
-    NSLog(@"Setting slide interval of %1.1f for duration %d", self.slideInterval, totalDuration);
+    NSDictionary *colorGroup = [self.colorGroups objectAtIndex:self.colorIndex];
+    NSInteger rate = [[colorGroup valueForKey:@"rate"] intValue];
+        
+    self.slideCount = floor(timePerColor/rate);
+    self.slideInterval = (NSTimeInterval)timePerColor / self.slideCount;
     
+
+}
+
+- (void)start
+{
     self.colorIndex = 0;
     self.slideIndex = 0;
-    
+    [self calculateSlideInterval];
+
     [self resume];
     [self handleTimer:nil] ;// Prime the pump
 
@@ -112,22 +131,26 @@
 
 - (void)handleTimer:(NSTimer *)timer
 {
-    NSLog(@"timerCalled");
-    NSInteger maxSlides = [[self.ageGroup valueForKey:@"displayCount"] intValue];
     NSInteger maxColors = [self.colorGroups count];
 
     
-    if (self.slideIndex == maxSlides) {
+    if (self.slideIndex == self.slideCount) {
         self.colorIndex++;
-        self.slideIndex = 0;
+        
+        if (self.colorIndex == maxColors) {
+            [self stop];
+            return;
+        }
+        else {
+            [self calculateSlideInterval];
+        
+            [self.slideTimer invalidate];
+            self.slideTimer = [NSTimer scheduledTimerWithTimeInterval:self.slideInterval target:self selector:@selector(handleTimer:) userInfo:nil repeats:YES];
+        
+            self.slideIndex = 0;
+        }
     }
     
-    if (self.colorIndex == maxColors) {
-        [self stop];
-        return;
-    }
-
-
     
     NSDictionary *colorGroup = [self.colorGroups objectAtIndex:self.colorIndex];
     
@@ -138,7 +161,7 @@
         image = [UIImage imageNamed:[startImage valueForKey:@"fileName"]];
         label = [startImage valueForKey:@"label"];
     }
-    else if (self.slideIndex == maxSlides -1 && [colorGroup valueForKey:@"finish"]) {
+    else if (self.slideIndex == self.slideCount -1 && [colorGroup valueForKey:@"finish"]) {
         NSDictionary *endImage = [colorGroup valueForKey:@"finish"];
         image = [UIImage imageNamed:[endImage valueForKey:@"fileName"]];
         label = [endImage valueForKey:@"label"];

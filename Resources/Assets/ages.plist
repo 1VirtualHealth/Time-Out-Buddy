@@ -3,12 +3,12 @@
 <plist version="1.0">
 <array>
 	<dict>
-        <key>age</key>
-		<integer>3</integer>
+		<key>age</key>
+		<integer>2</integer>
 		<key>displayCount</key>
 		<integer>1</integer>
 		<key>duration</key>
-		<integer>30</integer>
+		<integer>60</integer>
 		<key>name</key>
 		<string>sample</string>
 	</dict>
@@ -18,12 +18,12 @@
 		<key>displayCount</key>
 		<integer>1</integer>
 		<key>duration</key>
-		<integer>60</integer>
+		<integer>120</integer>
 		<key>name</key>
 		<string>2</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>3</integer>
 		<key>displayCount</key>
 		<integer>2</integer>
@@ -33,7 +33,7 @@
 		<string>3</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>4</integer>
 		<key>displayCount</key>
 		<integer>3</integer>
@@ -43,7 +43,7 @@
 		<string>4</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>5</integer>
 		<key>displayCount</key>
 		<integer>4</integer>
@@ -53,7 +53,7 @@
 		<string>5</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>6</integer>
 		<key>displayCount</key>
 		<integer>5</integer>
@@ -63,7 +63,7 @@
 		<string>6</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>7</integer>
 		<key>displayCount</key>
 		<integer>5</integer>
@@ -73,7 +73,7 @@
 		<string>7</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>8</integer>
 		<key>displayCount</key>
 		<integer>6</integer>
@@ -83,7 +83,7 @@
 		<string>8</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>9</integer>
 		<key>displayCount</key>
 		<integer>7</integer>
@@ -93,7 +93,7 @@
 		<string>9</string>
 	</dict>
 	<dict>
-        <key>age</key>
+		<key>age</key>
 		<integer>10</integer>
 		<key>displayCount</key>
 		<integer>8</integer>

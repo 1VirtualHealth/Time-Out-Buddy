@@ -15,7 +15,9 @@
 
 
 #define kAudioStartupDelay 5.0
-#define kDimmingVolume 0.3
+#define kAudioTimerDelay 15.0
+#define kAudioLastMessage 60
+#define kDimmingVolume 0.5
 
 @interface TOSlideManager()<AVAudioPlayerDelegate>
 
@@ -28,6 +30,9 @@
 @property (nonatomic, strong) NSTimer *slideTimer;
 
 @property (nonatomic, assign) NSTimeInterval slideInterval;
+
+@property (nonatomic, assign) NSTimeInterval startTime;
+@property (nonatomic, assign) NSTimeInterval timeoutDuration;
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioPlayer *backgroundPlayer;
@@ -65,6 +70,10 @@
 @synthesize audioPlayer = _audioPlayer;
 @synthesize backgroundPlayer = _backgroundPlayer;
 
+@synthesize startTime = _startTime;
+@synthesize timeoutDuration = _timeoutDuration;
+
+
 - (id)init
 {
     self = [super init];
@@ -97,10 +106,10 @@
 {
 
     //figure out the slide interval
-    NSInteger totalDuration = [[self.ageGroup valueForKey:@"duration"] intValue];
+
     NSInteger colorCount = [self.colorGroups count];
 
-    NSTimeInterval timePerColor = (NSTimeInterval)totalDuration/colorCount;
+    NSTimeInterval timePerColor = (NSTimeInterval)self.timeoutDuration/colorCount;
     
     NSDictionary *colorGroup = [self.colorGroups objectAtIndex:self.colorIndex];
     NSInteger rate = [[colorGroup valueForKey:@"rate"] intValue];
@@ -115,8 +124,12 @@
 {
     self.colorIndex = 0;
     self.slideIndex = 0;
+    self.timeoutDuration = [[self.ageGroup valueForKey:@"duration"] intValue];
+    self.startTime = [[NSDate date] timeIntervalSince1970];
+    
     [self calculateSlideInterval];
 
+    
     [self resume];
     [self handleTimer:nil] ;// Prime the pump
     
@@ -165,8 +178,37 @@
         self.backgroundPlayer.volume = kDimmingVolume;
         
         [self.audioPlayer play];
+    }
+    else {
         
     }
+    
+    self.audioTimer = [NSTimer scheduledTimerWithTimeInterval:kAudioTimerDelay target:self selector:@selector(audioInterval:) userInfo:nil repeats:YES];
+    
+}
+
+- (void)audioInterval:(NSTimer *)timer
+{
+    NSDate *finishTime = [[NSDate dateWithTimeIntervalSince1970:self.startTime] dateByAddingTimeInterval:self.timeoutDuration];
+    
+    NSString *audioPath;
+    if ([finishTime timeIntervalSinceNow] < kAudioLastMessage) {
+        audioPath = [self.audio valueForKey:@"finish"];
+        [self.audioTimer invalidate];
+        self.audioTimer = nil;
+    }
+    else {
+        audioPath = [[self.audio valueForKey:@"general"] randomObject];
+    }
+    NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioPath ofType:nil]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+    self.audioPlayer.numberOfLoops = 0;
+    self.audioPlayer.volume = 1.0;
+    self.audioPlayer.delegate = self;
+    self.backgroundPlayer.volume= kDimmingVolume;
+    
+    [self.audioPlayer play];
+
 }
 
 - (void)handleTimer:(NSTimer *)timer

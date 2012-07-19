@@ -6,11 +6,12 @@
 	<string>background.mp3</string>
 	<key>general</key>
 	<array>
-		<string>Ping.aiff</string>
+		<string>cheer.mp3</string>
+		<string>clearthroat.wav</string>
 	</array>
 	<key>finish</key>
-	<string>Purr.aiff</string>
+	<string>applause.wav</string>
 	<key>start</key>
-	<string>cheer.mp3</string>
+	<string>comeon.wav</string>
 </dict>
 </plist>

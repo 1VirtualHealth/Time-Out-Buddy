@@ -139,9 +139,18 @@
 
 - (void)pause
 {
-    [self.slideTimer invalidate];
-    self.slideTimer = nil;
+    if (self.slideTimer) {
+        [self.slideTimer invalidate];
+        self.slideTimer = nil;
+    }
+    if (self.audioTimer) {
+        [self.audioTimer invalidate];
+        self.audioTimer = nil;
+    }
+    
     [self.backgroundPlayer stopWithFadeDuration:2.0];
+    self.audioPlayer = nil;
+    
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 
 }

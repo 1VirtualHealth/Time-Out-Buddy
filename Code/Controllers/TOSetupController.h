@@ -19,5 +19,6 @@
 
 
 - (IBAction)chooseAge:(id)sender;
+- (IBAction)showHelpPressed:(id)sender;
 
 @end

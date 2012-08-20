@@ -82,6 +82,7 @@
 		5299150315A7A9980035B896 /* TOSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299150215A7A9980035B896 /* TOSlide.m */; };
 		5299152115A7BC2F0035B896 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5299152015A7BC2F0035B896 /* AVFoundation.framework */; };
 		5299152815A7BEB80035B896 /* AVAudioPlayer+PGFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */; };
+		52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4D03C15E2B67700EC3C54 /* TOHelpController.m */; };
 		52A57F5515B77A600050C53C /* audio.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F5415B77A600050C53C /* audio.plist */; };
 		52A57F6B15B784A10050C53C /* cheer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F6A15B784A10050C53C /* cheer.mp3 */; };
 		52BF99B715AB3B4F00BC512B /* ages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52BF99B615AB3B4F00BC512B /* ages.plist */; };
@@ -179,6 +180,8 @@
 		5299152015A7BC2F0035B896 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5299152615A7BEB80035B896 /* AVAudioPlayer+PGFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+PGFade.h"; sourceTree = "<group>"; };
 		5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+PGFade.m"; sourceTree = "<group>"; };
+		52A4D03B15E2B67700EC3C54 /* TOHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOHelpController.h; sourceTree = "<group>"; };
+		52A4D03C15E2B67700EC3C54 /* TOHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOHelpController.m; sourceTree = "<group>"; };
 		52A57F5415B77A600050C53C /* audio.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = audio.plist; sourceTree = "<group>"; };
 		52A57F6A15B784A10050C53C /* cheer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cheer.mp3; sourceTree = "<group>"; };
 		52BF99B615AB3B4F00BC512B /* ages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ages.plist; sourceTree = "<group>"; };
@@ -413,6 +416,8 @@
 				5208DB7415A77F3B00052CB3 /* TOSetupController.m */,
 				5208DB7915A77F8D00052CB3 /* TOMainController.h */,
 				5208DB7A15A77F8D00052CB3 /* TOMainController.m */,
+				52A4D03B15E2B67700EC3C54 /* TOHelpController.h */,
+				52A4D03C15E2B67700EC3C54 /* TOHelpController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -607,6 +612,7 @@
 				52BF99BD15AB4EC600BC512B /* UIColor+Additions.m in Sources */,
 				524EA32E15AB6F6B00FCCCB1 /* GradientButton.m in Sources */,
 				5236BAC415B0905800FC6985 /* NSArray+TOAdditions.m in Sources */,
+				52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

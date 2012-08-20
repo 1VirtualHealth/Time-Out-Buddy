@@ -8,6 +8,7 @@
 
 #import "TOSetupController.h"
 #import "TOMainController.h"
+#import "TOHelpController.h"
 #import "TOAgePickerView.h"
 #import "GradientButton.h"
 #import "Constants.h"
@@ -39,7 +40,6 @@
 {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
     NSString *label = [NSString stringWithFormat:@"%@ (%@)", [infoDict valueForKey:@"CFBundleShortVersionString"], [infoDict valueForKey:@"CFBundleVersion"]];
-    NSLog(label);
 }
 
 - (void)viewDidLoad
@@ -121,6 +121,12 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         };
     }
+    else if ([segue.identifier isEqualToString:@"launchHelpSegue"]) {
+        TOHelpController *controller = [segue destinationViewController];
+        controller.onEndHelp = ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+    }
 }
 
 
@@ -129,4 +135,8 @@
     [self showAgePickerAnimated:YES];
 }
 
+- (IBAction)showHelpPressed:(id)sender
+{
+    
+}
 @end

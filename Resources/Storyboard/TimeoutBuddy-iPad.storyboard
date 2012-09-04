@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2809" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="UfP-yd-tvT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12B19" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="UfP-yd-tvT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1884"/>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Setup Controller-->
@@ -50,6 +51,21 @@
                                     <segue destination="xgs-OD-Gbb" kind="modal" identifier="launchMainSegue" id="W3E-uJ-U7b"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="btr-Dj-lnZ">
+                                <rect key="frame" x="730" y="10" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Cku-aj-saW" kind="modal" identifier="launchHelpSegue" modalPresentationStyle="formSheet" id="D5b-Yj-2Dv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -62,6 +78,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkC-hf-xPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-192" y="-200"/>
+        </scene>
+        <!--Help Controller-->
+        <scene sceneID="AlJ-rM-EaB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeT-Os-iND" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Cku-aj-saW" customClass="TOHelpController" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="-1188"/>
         </scene>
         <!--Main Controller-->
         <scene sceneID="MmD-VT-zvB">
@@ -79,14 +103,14 @@
                                 <rect key="frame" x="10" y="933" width="95" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="Label" textAlignment="center" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="dDl-TT-xvN">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dDl-TT-xvN">
                                 <rect key="frame" x="10" y="3" width="748" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="1"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CqQ-rj-Ah2" customClass="GradientButton">
                                 <rect key="frame" x="284" y="894" width="200" height="44"/>
@@ -115,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbV-nU-pTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-340"/>
+            <point key="canvasLocation" x="1123" y="-88"/>
         </scene>
     </scenes>
     <resources>
@@ -126,6 +150,13 @@
     <classes>
         <class className="GradientButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
+        </class>
+        <class className="TOHelpController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOHelpController.h"/>
+            <relationships>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="helpScroller" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="TOMainController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOMainController.h"/>
@@ -140,6 +171,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
             <relationships>
                 <relationship kind="action" name="chooseAge:"/>
+                <relationship kind="action" name="showHelpPressed:"/>
                 <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
                 <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
             </relationships>

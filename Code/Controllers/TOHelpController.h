@@ -15,5 +15,6 @@ typedef void (^EndHelpBlock)();
 
 
 @property (nonatomic, copy)  EndHelpBlock onEndHelp;
+@property (nonatomic, strong) NSArray *slideNames;
 
 @end

@@ -28,6 +28,7 @@
 
 @property (nonatomic, strong) NSTimer *audioTimer;
 @property (nonatomic, strong) NSTimer *slideTimer;
+@property (nonatomic, strong) NSTimer *middleTimer;
 
 @property (nonatomic, assign) NSTimeInterval slideInterval;
 
@@ -43,6 +44,7 @@
 
 - (void)handleTimer:(NSTimer *)timer;
 - (void)calculateSlideInterval;
+- (void)middleAudioTimer:(NSTimer *)timer;
 
 @end
 
@@ -55,8 +57,10 @@
 @synthesize images = _images;
 @synthesize onTick = _onTick;
 @synthesize onComplete = _onComplete;
+
 @synthesize slideTimer = _slideTimer;
 @synthesize audioTimer = _audioTimer;
+@synthesize middleTimer = _middleTimer;
 
 @synthesize slideInterval = _slideInterval;
 
@@ -134,7 +138,7 @@
     [self handleTimer:nil] ;// Prime the pump
     
     self.audioTimer = [NSTimer scheduledTimerWithTimeInterval:kAudioStartupDelay target:self selector:@selector(firstAudioRun:) userInfo:nil repeats:NO];
-
+    self.middleTimer = [NSTimer scheduledTimerWithTimeInterval:self.timeoutDuration/2 target:self selector:@selector(middleAudioTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)pause
@@ -146,6 +150,11 @@
     if (self.audioTimer) {
         [self.audioTimer invalidate];
         self.audioTimer = nil;
+    }
+    
+    if (self.middleTimer) {
+        [self.middleTimer invalidate];
+        self.middleTimer = nil;
     }
     
     [self.backgroundPlayer stopWithFadeDuration:2.0];
@@ -194,6 +203,22 @@
     
     self.audioTimer = [NSTimer scheduledTimerWithTimeInterval:kAudioTimerDelay target:self selector:@selector(audioInterval:) userInfo:nil repeats:YES];
     
+}
+
+- (void)middleAudioTimer:(NSTimer *)timer
+{
+    NSString *middleAudio = [self.audio valueForKey:@"middle"];
+    if (middleAudio) {
+        NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:middleAudio ofType:nil]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+        self.audioPlayer.numberOfLoops = 0;
+        self.audioPlayer.volume = 1.0;
+        
+        self.audioPlayer.delegate = self;
+        self.backgroundPlayer.volume = kDimmingVolume;
+        
+        [self.audioPlayer play];
+    }
 }
 
 - (void)audioInterval:(NSTimer *)timer

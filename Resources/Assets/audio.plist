@@ -2,18 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>middle</key>
-	<string>comeon.wav</string>
 	<key>background</key>
 	<string>background.mp3</string>
 	<key>general</key>
 	<array>
-		<string>cheer.mp3</string>
-		<string>clearthroat.wav</string>
+		<string>NiceJob2_bip.aif</string>
+		<string>Safe2_bip.aif</string>
+		<string>YouCan2_bip.aif</string>
+		<string>Keep1_bip.aif</string>
+		<string>Remember2_bip.aif</string>
+		<string>YouGot1_bip.aif</string>
+		<string>Hang2_bip.aif</string>
+		<string>Almost2_bip.aif</string>
+		<string>Pictures2_bip.aif</string>
 	</array>
 	<key>finish</key>
-	<string>applause.wav</string>
+	<string>YouMade1_bip.aif</string>
+	<key>middle</key>
+	<string>Halfway1_bip.aif</string>
 	<key>start</key>
-	<string>comeon.wav</string>
+	<string>Intro2_bip.aif</string>
 </dict>
 </plist>

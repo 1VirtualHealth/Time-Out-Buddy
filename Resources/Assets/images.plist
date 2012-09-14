@@ -11,17 +11,6 @@
 			<integer>3</integer>
 		</dict>
 		<key>fileName</key>
-		<string>3-10-Cat-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>3</integer>
-		</dict>
-		<key>fileName</key>
 		<string>3-10-Wigglebottom-768.jpg</string>
 	</dict>
 	<dict>
@@ -199,17 +188,6 @@
 		</dict>
 		<key>fileName</key>
 		<string>3-5-Husky-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>5</integer>
-			<key>minimum</key>
-			<integer>3</integer>
-		</dict>
-		<key>fileName</key>
-		<string>3-5-InoEyes-768.jpg</string>
 	</dict>
 	<dict>
 		<key>ageFilter</key>
@@ -605,17 +583,6 @@
 			<integer>8</integer>
 		</dict>
 		<key>fileName</key>
-		<string>8-10-Crab-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
 		<string>8-10-doggy-768.jpg</string>
 	</dict>
 	<dict>
@@ -693,29 +660,7 @@
 			<integer>8</integer>
 		</dict>
 		<key>fileName</key>
-		<string>8-10-Lab-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
 		<string>8-10-Lion-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
-		<string>8-10-OrangeDog-768.jpg</string>
 	</dict>
 	<dict>
 		<key>ageFilter</key>
@@ -748,40 +693,7 @@
 			<integer>8</integer>
 		</dict>
 		<key>fileName</key>
-		<string>8-10-Purple-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
 		<string>8-10-Purple2-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
-		<string>8-10-River-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
-		<string>8-10-Sailboat-768.jpg</string>
 	</dict>
 	<dict>
 		<key>ageFilter</key>
@@ -815,17 +727,6 @@
 		</dict>
 		<key>fileName</key>
 		<string>8-10-Swans-768.jpg</string>
-	</dict>
-	<dict>
-		<key>ageFilter</key>
-		<dict>
-			<key>maximum</key>
-			<integer>10</integer>
-			<key>minimum</key>
-			<integer>8</integer>
-		</dict>
-		<key>fileName</key>
-		<string>8-10-water-768.jpg</string>
 	</dict>
 	<dict>
 		<key>ageFilter</key>

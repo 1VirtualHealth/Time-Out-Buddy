@@ -135,8 +135,4 @@
     [self showAgePickerAnimated:YES];
 }
 
-- (IBAction)showHelpPressed:(id)sender
-{
-    
-}
 @end

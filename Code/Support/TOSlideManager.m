@@ -16,8 +16,8 @@
 
 #define kAudioStartupDelay 2.0
 #define kAudioTimerDelay 15.0
-#define kAudioLastMessage 60
-#define kDimmingVolume 0.5
+#define kAudioLastMessage 5
+#define kDimmingVolume 0.2
 
 @interface TOSlideManager()<AVAudioPlayerDelegate>
 
@@ -157,8 +157,17 @@
         self.middleTimer = nil;
     }
     
+    
     [self.backgroundPlayer stopWithFadeDuration:2.0];
-    self.audioPlayer = nil;
+    NSString *audioPath = [self.audio valueForKey:@"finish"];
+    NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioPath ofType:nil]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+    self.audioPlayer.numberOfLoops = 0;
+    self.audioPlayer.volume = 1.0;
+    self.audioPlayer.delegate = self;
+    self.backgroundPlayer.volume= kDimmingVolume;
+    
+    [self.audioPlayer play];
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 
@@ -222,18 +231,8 @@
 }
 
 - (void)audioInterval:(NSTimer *)timer
-{
-    NSDate *finishTime = [[NSDate dateWithTimeIntervalSince1970:self.startTime] dateByAddingTimeInterval:self.timeoutDuration];
-    
-    NSString *audioPath;
-    if ([finishTime timeIntervalSinceNow] < kAudioLastMessage) {
-        audioPath = [self.audio valueForKey:@"finish"];
-        [self.audioTimer invalidate];
-        self.audioTimer = nil;
-    }
-    else {
-        audioPath = [[self.audio valueForKey:@"general"] randomObject];
-    }
+{ 
+    NSString *audioPath = [[self.audio valueForKey:@"general"] randomObject];
     NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioPath ofType:nil]];
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
     self.audioPlayer.numberOfLoops = 0;

@@ -14,7 +14,7 @@
 #import "NSArray+TOAdditions.h"
 
 
-#define kAudioStartupDelay 5.0
+#define kAudioStartupDelay 2.0
 #define kAudioTimerDelay 15.0
 #define kAudioLastMessage 60
 #define kDimmingVolume 0.5

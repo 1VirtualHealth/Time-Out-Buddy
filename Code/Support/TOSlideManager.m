@@ -15,7 +15,7 @@
 
 
 #define kAudioStartupDelay 2.0
-#define kAudioTimerDelay 15.0
+#define kAudioTimerDelay 30.0
 #define kAudioLastMessage 5
 #define kDimmingVolume 0.2
 

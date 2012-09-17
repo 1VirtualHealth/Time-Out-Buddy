@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _slideNames = @[ @"Slide1.png", @"Slide2.png", @"Slide3.png"];
+    _slideNames = @[ @"Slide01.png", @"Slide02.png", @"Slide03.png", @"Slide04.png", @"Slide05.png", @"Slide06.png", @"Slide07.png", @"Slide08.png", @"Slide09.png", @"Slide10.png", @"Slide11.png", @"Slide12.png", @"Slide13.png", @"Slide14.png", @"Slide15.png", @"Slide16.png", @"Slide17.png", @"Slide18.png", @"Slide19.png"];
     
     NSMutableArray *slides = [NSMutableArray array];
     self.helpScroller.contentSize = CGSizeMake(CGRectGetWidth(self.helpScroller.frame) * [_slideNames count], CGRectGetHeight(self.helpScroller.frame));

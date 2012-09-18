@@ -11,9 +11,13 @@
 @interface TOHelpController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UIScrollView *helpScroller;
+@property (nonatomic, strong) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, strong) NSArray *slideViews;
 
+@property BOOL isPaging;
+
 - (IBAction)donePressed:(id)sender;
+- (IBAction)pageControlPressed:(id)sender;
 
 @end
 
@@ -49,6 +53,8 @@
         [self.helpScroller addSubview:imageView];
     }
     self.slideViews = slides;
+    self.pageControl.numberOfPages = [slides count];
+    self.pageControl.hidesForSinglePage = YES;
 }
 
 
@@ -81,6 +87,39 @@
 - (IBAction)donePressed:(id)sender
 {
     _onEndHelp();
+}
+
+- (IBAction)pageControlPressed:(id)sender
+{
+    CGRect rect = self.helpScroller.bounds;
+    rect.origin.x = self.pageControl.currentPage * CGRectGetWidth(rect);
+    rect.origin.y = 0;
+    
+    [self.helpScroller scrollRectToVisible:rect animated:YES];
+    self.isPaging = YES;
+}
+
+#pragma mark - UIScrollViewDelegate methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if(self.isPaging)
+        return;
+    
+    CGFloat pageWidth = CGRectGetWidth(self.helpScroller.frame);
+    int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    self.pageControl.currentPage = page;
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    self.isPaging = NO;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.isPaging = NO;
 }
 
 

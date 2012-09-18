@@ -22,6 +22,8 @@
 @interface TOSlideManager()<AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) NSArray *colorGroups;
+@property (nonatomic, strong) NSDictionary *finishSlide;
+
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) NSDictionary *audio;
@@ -53,30 +55,6 @@
 
 @implementation TOSlideManager
 
-@synthesize ageGroup = _ageGroup;
-@synthesize images = _images;
-@synthesize onTick = _onTick;
-@synthesize onComplete = _onComplete;
-
-@synthesize slideTimer = _slideTimer;
-@synthesize audioTimer = _audioTimer;
-@synthesize middleTimer = _middleTimer;
-
-@synthesize slideInterval = _slideInterval;
-
-@synthesize slideCount = _slideCount;
-@synthesize slideIndex = _slideIndex;
-@synthesize colorIndex = _colorIndex;
-
-@synthesize  colorGroups = _colorGroups;
-@synthesize audio = _audio;
-
-@synthesize audioPlayer = _audioPlayer;
-@synthesize backgroundPlayer = _backgroundPlayer;
-
-@synthesize startTime = _startTime;
-@synthesize timeoutDuration = _timeoutDuration;
-
 
 - (id)init
 {
@@ -84,7 +62,10 @@
     if (self) {
         
         NSString *colorPath = [[NSBundle mainBundle] pathForResource:@"colors" ofType:@"plist"];
-        self.colorGroups = [NSArray arrayWithContentsOfFile:colorPath];
+        NSDictionary *colors = [NSDictionary dictionaryWithContentsOfFile:colorPath];
+        self.colorGroups = [colors valueForKey:@"colors"];
+        
+        self.finishSlide = [colors valueForKey:@"finish"];
         
         NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
         self.images = [NSArray arrayWithContentsOfFile:imagesPath];
@@ -158,16 +139,7 @@
     }
     
     
-    [self.backgroundPlayer stopWithFadeDuration:2.0];
-    NSString *audioPath = [self.audio valueForKey:@"finish"];
-    NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioPath ofType:nil]];
-    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
-    self.audioPlayer.numberOfLoops = 0;
-    self.audioPlayer.volume = 1.0;
-    self.audioPlayer.delegate = self;
-    self.backgroundPlayer.volume= kDimmingVolume;
-    
-    [self.audioPlayer play];
+
     
     
     
@@ -189,7 +161,25 @@
 - (void)stop
 {
     [self pause];
-    _onComplete();
+    
+    [self.backgroundPlayer stopWithFadeDuration:2.0];
+    NSString *audioPath = [self.audio valueForKey:@"finish"];
+    NSURL *audioURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:audioPath ofType:nil]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:audioURL error:nil];
+    self.audioPlayer.numberOfLoops = 0;
+    self.audioPlayer.volume = 1.0;
+    self.audioPlayer.delegate = self;
+    
+    [self.audioPlayer play];
+    
+    //HACK : to satisfy the need to only show the GO image at the very end, rather than as the last slide
+    UIImage *image = [UIImage imageNamed:[self.finishSlide valueForKey:@"fileName"]];
+    NSString *label = [self.finishSlide valueForKey:@"label"];
+    UIColor *color = [UIColor colorWithHexString:[self.finishSlide valueForKey:@"color"]];
+    TOSlide *slide = [TOSlide slideWithImage:image color:color label:label];
+    _onTick(slide);
+
+        _onComplete();
 }
 
 - (void)firstAudioRun:(NSTimer *)timer
@@ -204,7 +194,7 @@
         self.audioPlayer.volume = 1.0;
         
         self.audioPlayer.delegate = self;
-        self.backgroundPlayer.volume = kDimmingVolume;
+        [self.backgroundPlayer fadeToVolume:kDimmingVolume duration:1.0];
         
         [self.audioPlayer play];
     }
@@ -226,7 +216,7 @@
         self.audioPlayer.volume = 1.0;
         
         self.audioPlayer.delegate = self;
-        self.backgroundPlayer.volume = kDimmingVolume;
+        [self.backgroundPlayer fadeToVolume:kDimmingVolume duration:1.0];
         
         [self.audioPlayer play];
     }
@@ -294,6 +284,7 @@
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         label = [candidate valueForKey:@"label"];
     }
+    
     UIColor *color = [UIColor colorWithHexString:[colorGroup valueForKey:@"color"]];
     TOSlide *slide = [TOSlide slideWithImage:image color:color label:label];
     
@@ -307,7 +298,8 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     if ( player == self.audioPlayer) {
-        self.backgroundPlayer.volume = 1.0;
+        [self.backgroundPlayer fadeToVolume:1.0 duration:1.0];
+//        self.backgroundPlayer.volume = 1.0;
     }
     
 }

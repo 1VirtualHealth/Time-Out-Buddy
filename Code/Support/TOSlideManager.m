@@ -169,6 +169,8 @@
     
     [self.audioPlayer play];
     
+    
+    
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 
 }

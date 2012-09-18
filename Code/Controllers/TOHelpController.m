@@ -44,8 +44,6 @@
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:imageFrame];
         imageView.autoresizingMask = UIViewAutoresizingNone;
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        imageView.layer.borderColor = [[UIColor greenColor] CGColor];
-        imageView.layer.borderWidth = 4.0f;
         imageView.image = [UIImage imageNamed:[_slideNames objectAtIndex:index]];
         [slides addObject:imageView];
         [self.helpScroller addSubview:imageView];

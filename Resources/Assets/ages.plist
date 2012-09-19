@@ -8,16 +8,6 @@
 		<key>displayCount</key>
 		<integer>1</integer>
 		<key>duration</key>
-		<integer>60</integer>
-		<key>name</key>
-		<string>sample</string>
-	</dict>
-	<dict>
-		<key>age</key>
-		<integer>3</integer>
-		<key>displayCount</key>
-		<integer>1</integer>
-		<key>duration</key>
 		<integer>120</integer>
 		<key>name</key>
 		<string>2</string>

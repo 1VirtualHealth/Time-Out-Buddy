@@ -41,7 +41,6 @@
 - (void)populateVersionLabel
 {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *label = [NSString stringWithFormat:@"%@ (%@)", [infoDict valueForKey:@"CFBundleShortVersionString"], [infoDict valueForKey:@"CFBundleVersion"]];
 }
 
 - (void)viewDidLoad

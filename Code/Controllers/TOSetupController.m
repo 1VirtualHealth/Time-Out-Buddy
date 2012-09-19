@@ -13,6 +13,7 @@
 #import "GradientButton.h"
 #import "Constants.h"
 
+
 @interface TOSetupController ()
 
 @property (strong, nonatomic) TOAgePickerView *agePicker;
@@ -26,6 +27,7 @@
 @synthesize agePicker = _agePicker;
 @synthesize startButton = _startButton;
 @synthesize selectAgeButton = _selectAgeButton;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

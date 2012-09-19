@@ -67,10 +67,7 @@
         
         self.finishSlide = [colors valueForKey:@"finish"];
         
-        NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
-        self.images = [NSArray arrayWithContentsOfFile:imagesPath];
-     
-        
+                
         NSString *audioPath  = [[NSBundle mainBundle] pathForResource:@"audio" ofType:@"plist"];
         self.audio = [NSDictionary dictionaryWithContentsOfFile:audioPath];
         
@@ -113,6 +110,13 @@
     self.startTime = [[NSDate date] timeIntervalSince1970];
     
     [self calculateSlideInterval];
+
+    NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
+    
+    NSArray *allImages = [NSArray arrayWithContentsOfFile:imagesPath];
+    NSInteger age = [[self.ageGroup valueForKey:@"age"] intValue];
+    NSPredicate *agePredicate = [NSPredicate predicateWithFormat:@"ageFilter == NULL OR (ageFilter.minimum <= %d AND ageFilter.maximum >= %d)", age, age];
+    self.images = [allImages filteredArrayUsingPredicate:agePredicate];
 
     
     [self resume];
@@ -274,14 +278,9 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        //From the images generate the age predicate
-        NSInteger age = [[self.ageGroup valueForKey:@"age"] intValue];
-        NSPredicate *agePredicate = [NSPredicate predicateWithFormat:@"ageFilter == NULL OR (ageFilter.minimum <= %d AND ageFilter.maximum >= %d)", age, age];
-        NSArray *filteredArray = [self.images filteredArrayUsingPredicate:agePredicate];
-        
-        
-        NSDictionary *candidate = [filteredArray randomObject];
+        NSDictionary *candidate = [self.images randomObject];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
+        NSLog(@"%@", [candidate valueForKey:@"fileName"]);
         label = [candidate valueForKey:@"label"];
     }
     

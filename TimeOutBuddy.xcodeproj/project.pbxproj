@@ -134,6 +134,7 @@
 		524EA33015AB7E6C00FCCCB1 /* setup_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA32F15AB7E6C00FCCCB1 /* setup_background.png */; };
 		524EA33315AB81BB00FCCCB1 /* go.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA33115AB81BB00FCCCB1 /* go.png */; };
 		524EA33415AB81BB00FCCCB1 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 524EA33215AB81BB00FCCCB1 /* stop.png */; };
+		524ED1F5160992F0006CD68C /* NSMutableArray+TOAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 524ED1F4160992F0006CD68C /* NSMutableArray+TOAdditions.m */; };
 		52594A6815AF992F0014BF86 /* home-ipad.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6415AF992F0014BF86 /* home-ipad.jpg */; };
 		52594A6915AF992F0014BF86 /* home-ipad@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6515AF992F0014BF86 /* home-ipad@2x.jpg */; };
 		52594A6A15AF992F0014BF86 /* home.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52594A6615AF992F0014BF86 /* home.jpg */; };
@@ -290,6 +291,8 @@
 		524EA32F15AB7E6C00FCCCB1 /* setup_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setup_background.png; sourceTree = "<group>"; };
 		524EA33115AB81BB00FCCCB1 /* go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = go.png; sourceTree = "<group>"; };
 		524EA33215AB81BB00FCCCB1 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		524ED1F3160992F0006CD68C /* NSMutableArray+TOAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+TOAdditions.h"; sourceTree = "<group>"; };
+		524ED1F4160992F0006CD68C /* NSMutableArray+TOAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+TOAdditions.m"; sourceTree = "<group>"; };
 		52594A6415AF992F0014BF86 /* home-ipad.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-ipad.jpg"; sourceTree = "<group>"; };
 		52594A6515AF992F0014BF86 /* home-ipad@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "home-ipad@2x.jpg"; sourceTree = "<group>"; };
 		52594A6615AF992F0014BF86 /* home.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpg; sourceTree = "<group>"; };
@@ -558,6 +561,8 @@
 				52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */,
 				5236BAC215B0905800FC6985 /* NSArray+TOAdditions.h */,
 				5236BAC315B0905800FC6985 /* NSArray+TOAdditions.m */,
+				524ED1F3160992F0006CD68C /* NSMutableArray+TOAdditions.h */,
+				524ED1F4160992F0006CD68C /* NSMutableArray+TOAdditions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -873,6 +878,7 @@
 				524EA32E15AB6F6B00FCCCB1 /* GradientButton.m in Sources */,
 				5236BAC415B0905800FC6985 /* NSArray+TOAdditions.m in Sources */,
 				52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */,
+				524ED1F5160992F0006CD68C /* NSMutableArray+TOAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVAudioPlayer+PGFade.h"
 #import "UIColor+Additions.h"
+#import "NSMutableArray+TOAdditions.h"
 #import "NSArray+TOAdditions.h"
-
 
 #define kAudioStartupDelay 2.0
 #define kAudioTimerDelay 30.0
@@ -25,6 +25,8 @@
 @property (nonatomic, strong) NSDictionary *finishSlide;
 
 @property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) NSMutableArray *unusedImages;
+
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) NSDictionary *audio;
 
@@ -102,6 +104,14 @@
     
 }
 
+- (NSMutableArray *)unusedImages {
+    if ([_unusedImages count] == 0) {
+        _unusedImages = [NSMutableArray arrayWithArray:self.images];
+    }
+    
+    return _unusedImages;
+}
+
 - (void)start
 {
     self.colorIndex = 0;
@@ -117,7 +127,7 @@
     NSInteger age = [[self.ageGroup valueForKey:@"age"] intValue];
     NSPredicate *agePredicate = [NSPredicate predicateWithFormat:@"ageFilter == NULL OR (ageFilter.minimum <= %d AND ageFilter.maximum >= %d)", age, age];
     self.images = [allImages filteredArrayUsingPredicate:agePredicate];
-
+    self.unusedImages = [NSMutableArray arrayWithArray:self.images];
     
     [self resume];
     [self handleTimer:nil] ;// Prime the pump
@@ -278,7 +288,8 @@
         label = [endImage valueForKey:@"label"];
     }
     else {
-        NSDictionary *candidate = [self.images randomObject];
+        
+        NSDictionary *candidate = [self.unusedImages popRandomObject];
         image = [UIImage imageNamed:[candidate valueForKey:@"fileName"]];
         NSLog(@"%@", [candidate valueForKey:@"fileName"]);
         label = [candidate valueForKey:@"label"];

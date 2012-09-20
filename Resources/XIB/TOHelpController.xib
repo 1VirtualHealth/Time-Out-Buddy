@@ -47,6 +47,7 @@
 						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="1043878361"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="876508768"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -84,6 +85,10 @@
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="562395586"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSColor" key="IBUITintColor">
+							<int key="NSColorSpace">2</int>
+							<bytes key="NSRGB">MC41NTI5NDExNzY1IDAuMTU2ODYyNzQ1MSAwLjc3NjQ3MDU4ODIAA</bytes>
+						</object>
 						<array key="IBUIItems">
 							<object class="IBUINavigationItem" id="25834125">
 								<reference key="IBUINavigationBar" ref="1057332060"/>

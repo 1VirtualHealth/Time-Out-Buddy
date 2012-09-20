@@ -57,11 +57,8 @@
     self.pageControl.hidesForSinglePage = YES;
 }
 
-
-- (void)viewWillAppear:(BOOL)animated
+- (void)adjustLayout
 {
-    [super viewWillAppear:animated];
-
     self.helpScroller.contentSize = CGSizeMake(CGRectGetWidth(self.helpScroller.frame) * [_slideNames count], CGRectGetHeight(self.helpScroller.frame));
     for (NSInteger index = 0;index < [self.slideViews count];index++) {
         CGRect imageFrame = CGRectMake(CGRectGetWidth(self.helpScroller.frame)*index,
@@ -72,6 +69,13 @@
         subview.frame = imageFrame;
     }
 }
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self adjustLayout];
+
+}
  
 - (void)viewDidUnload
 {
@@ -80,8 +84,17 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+        return YES;
+    else
+        return UIInterfaceOrientationIsPortrait(interfaceOrientation);
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    return YES;
+    NSLog(@"rotated");
+    [self adjustLayout];
 }
 
 - (IBAction)donePressed:(id)sender

@@ -152,7 +152,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOHelpController.h"/>
             <relationships>
                 <relationship kind="action" name="donePressed:"/>
+                <relationship kind="action" name="pageControlPressed:"/>
                 <relationship kind="outlet" name="helpScroller" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
             </relationships>
         </class>
         <class className="TOMainController" superclassName="UIViewController">
@@ -168,7 +170,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
             <relationships>
                 <relationship kind="action" name="chooseAge:"/>
-                <relationship kind="action" name="showHelpPressed:"/>
                 <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
                 <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
             </relationships>

@@ -21,5 +21,5 @@ typedef void (^CompleteBlock)();
 @property (nonatomic, copy) CompleteBlock onComplete;
 
 - (void)start;
-
+- (void)stop;
 @end

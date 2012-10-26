@@ -1,0 +1,17 @@
+
+PODS:
+- A2DynamicDelegate (2.0.2):
+  - libffi
+- BlocksKit (1.5.2):
+  - A2DynamicDelegate
+- libffi (3.0.11)
+
+DEPENDENCIES:
+- BlocksKit
+
+SPEC CHECKSUMS:
+  A2DynamicDelegate: 013b345f1aca891ded67a95c1512fad677c260a9
+  BlocksKit: 12fbe889d9f8cc66adf5c9bd4cb0606071f214f2
+  libffi: 8a1d9ba43c0c84b546b42c6f742714e73aa07ae1
+
+COCOAPODS: 0.15.1

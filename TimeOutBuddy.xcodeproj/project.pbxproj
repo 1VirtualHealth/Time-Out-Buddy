@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		077584F84C284503A91083C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B7B97EE4BA4B50A7D2E168 /* libPods.a */; };
 		366671CD1607B0AC006BAAE9 /* Slide19.png in Resources */ = {isa = PBXBuildFile; fileRef = 366671BA1607B0AC006BAAE9 /* Slide19.png */; };
 		366671CE1607B0AC006BAAE9 /* Slide18.png in Resources */ = {isa = PBXBuildFile; fileRef = 366671BB1607B0AC006BAAE9 /* Slide18.png */; };
 		366671CF1607B0AC006BAAE9 /* Slide17.png in Resources */ = {isa = PBXBuildFile; fileRef = 366671BC1607B0AC006BAAE9 /* Slide17.png */; };
@@ -151,6 +152,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12B7B97EE4BA4B50A7D2E168 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		26861AE515A3442F813752C1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		366671BA1607B0AC006BAAE9 /* Slide19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slide19.png; sourceTree = "<group>"; };
 		366671BB1607B0AC006BAAE9 /* Slide18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slide18.png; sourceTree = "<group>"; };
 		366671BC1607B0AC006BAAE9 /* Slide17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Slide17.png; sourceTree = "<group>"; };
@@ -288,7 +291,7 @@
 		529914FF15A7A7690035B896 /* TOSlideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOSlideManager.m; sourceTree = "<group>"; };
 		5299150115A7A9980035B896 /* TOSlide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOSlide.h; sourceTree = "<group>"; };
 		5299150215A7A9980035B896 /* TOSlide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOSlide.m; sourceTree = "<group>"; };
-		5299152015A7BC2F0035B896 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5299152015A7BC2F0035B896 /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5299152615A7BEB80035B896 /* AVAudioPlayer+PGFade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+PGFade.h"; sourceTree = "<group>"; };
 		5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+PGFade.m"; sourceTree = "<group>"; };
 		52A2410215F64FD900DE7B12 /* TOHelpController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TOHelpController.xib; sourceTree = "<group>"; };
@@ -299,10 +302,10 @@
 		52BF99BB15AB4EC600BC512B /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		52C4207315A2830F00D70783 /* TimeOutBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeOutBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C4207715A2830F00D70783 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		52C4207915A2830F00D70783 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		52C4207B15A2830F00D70783 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		52C4207D15A2830F00D70783 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		52C4207715A2830F00D70783 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		52C4207915A2830F00D70783 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		52C4207B15A2830F00D70783 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		52C4207D15A2830F00D70783 /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		52C4209615A2847B00D70783 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		52C4209715A2847B00D70783 /* TimeOutBuddy-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TimeOutBuddy-Prefix.pch"; sourceTree = "<group>"; };
 		52C4209815A2847B00D70783 /* TOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOAppDelegate.h; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 				52C4207A15A2830F00D70783 /* Foundation.framework in Frameworks */,
 				52C4207C15A2830F00D70783 /* CoreGraphics.framework in Frameworks */,
 				52C4207E15A2830F00D70783 /* CoreData.framework in Frameworks */,
+				077584F84C284503A91083C5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +550,7 @@
 				52C4209315A2847B00D70783 /* Code */,
 				52C4207615A2830F00D70783 /* Frameworks */,
 				52C4207415A2830F00D70783 /* Products */,
+				26861AE515A3442F813752C1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -565,6 +570,7 @@
 				52C4207915A2830F00D70783 /* Foundation.framework */,
 				52C4207B15A2830F00D70783 /* CoreGraphics.framework */,
 				52C4207D15A2830F00D70783 /* CoreData.framework */,
+				12B7B97EE4BA4B50A7D2E168 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				52C4207015A2830F00D70783 /* Frameworks */,
 				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 				52C4207115A2830F00D70783 /* Resources */,
+				2D8839D6B93F4E8693069C58 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -809,6 +816,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2D8839D6B93F4E8693069C58 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		521E9CC315ABC45500F65D39 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
@@ -904,6 +925,7 @@
 		};
 		52C4209115A2830F00D70783 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26861AE515A3442F813752C1 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -917,7 +939,7 @@
 					"\"$(SRCROOT)/Vendor/A2DynamicDelegate\"",
 				);
 				OTHER_LDFLAGS = (
-					"-ObjC",
+					"$(inherited)",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -930,6 +952,7 @@
 		};
 		52C4209215A2830F00D70783 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26861AE515A3442F813752C1 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -943,7 +966,7 @@
 					"\"$(SRCROOT)/Vendor/A2DynamicDelegate\"",
 				);
 				OTHER_LDFLAGS = (
-					"-ObjC",
+					"$(inherited)",
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

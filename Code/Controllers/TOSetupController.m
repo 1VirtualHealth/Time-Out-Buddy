@@ -20,13 +20,12 @@
 
 - (void)setAgeButtonDisplay:(NSString *)age;
 - (void)populateVersionLabel;
+- (void)showAgePickerPopover;
+
 @end
 
 @implementation TOSetupController
 
-@synthesize agePicker = _agePicker;
-@synthesize startButton = _startButton;
-@synthesize selectAgeButton = _selectAgeButton;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -133,7 +132,12 @@
 
 - (IBAction)chooseAge:(id)sender
 {
-    [self showAgePickerAnimated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self showAgePickerAnimated:YES];
+    }
+    else {
+        [self showAgePickerPopover];
+    }
 }
 
 @end

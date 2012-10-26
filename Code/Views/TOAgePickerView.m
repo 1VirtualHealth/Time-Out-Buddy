@@ -22,8 +22,7 @@
 @synthesize currentAge = _currentAge;
 - (id)initWithFrame:(CGRect)frame
 {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    self = [super initWithFrame:CGRectMake(0,0,CGRectGetWidth(screenRect),244)];
+    self = [super initWithFrame:CGRectMake(0,0,320,244)];
     if (self) {
         UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(self.bounds),44)];
         toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;

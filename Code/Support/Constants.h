@@ -10,3 +10,4 @@
 #define isPad() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define isPhone() (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 
+extern int ddLogLevel;

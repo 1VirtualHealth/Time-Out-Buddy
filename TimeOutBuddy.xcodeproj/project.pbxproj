@@ -132,6 +132,8 @@
 		524ED233160BC905006CD68C /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 524ED232160BC905006CD68C /* Icon-144.png */; };
 		524ED235160BCE96006CD68C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 524ED234160BCE96006CD68C /* Settings.bundle */; };
 		52823E7B15B44D8A00E58978 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52823E7A15B44D8A00E58978 /* images.plist */; };
+		5282CD5A163B337600E84C2E /* _TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD57163B337500E84C2E /* _TOChild.m */; };
+		5282CD5B163B337600E84C2E /* TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD59163B337500E84C2E /* TOChild.m */; };
 		5295ECEA15AF9A94008F7670 /* transparent_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5295ECE915AF9A94008F7670 /* transparent_logo.png */; };
 		5295ED9615B078B9008F7670 /* colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5295ED9515B078B9008F7670 /* colors.plist */; };
 		529914F815A78A010035B896 /* TOAgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529914F715A78A010035B896 /* TOAgePickerView.m */; };
@@ -285,6 +287,10 @@
 		524ED232160BC905006CD68C /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		524ED234160BCE96006CD68C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		52823E7A15B44D8A00E58978 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
+		5282CD56163B337500E84C2E /* _TOChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TOChild.h; sourceTree = "<group>"; };
+		5282CD57163B337500E84C2E /* _TOChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TOChild.m; sourceTree = "<group>"; };
+		5282CD58163B337500E84C2E /* TOChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOChild.h; sourceTree = "<group>"; };
+		5282CD59163B337500E84C2E /* TOChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOChild.m; sourceTree = "<group>"; };
 		5295ECE915AF9A94008F7670 /* transparent_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_logo.png; sourceTree = "<group>"; };
 		5295ED9515B078B9008F7670 /* colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors.plist; sourceTree = "<group>"; };
 		529914F615A78A010035B896 /* TOAgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOAgePickerView.h; sourceTree = "<group>"; };
@@ -459,6 +465,25 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		5282CD54163B332900E84C2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5282CD55163B337500E84C2E /* Generated */,
+				5282CD58163B337500E84C2E /* TOChild.h */,
+				5282CD59163B337500E84C2E /* TOChild.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5282CD55163B337500E84C2E /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				5282CD56163B337500E84C2E /* _TOChild.h */,
+				5282CD57163B337500E84C2E /* _TOChild.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		529914F415A789DA0035B896 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,6 +609,7 @@
 		52C4209315A2847B00D70783 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				5282CD54163B332900E84C2E /* Models */,
 				52BF99BA15AB4E8B00BC512B /* Categories */,
 				529914FD15A7A7370035B896 /* Support */,
 				529914F415A789DA0035B896 /* Views */,
@@ -653,6 +679,7 @@
 				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 				52C4207115A2830F00D70783 /* Resources */,
 				2D8839D6B93F4E8693069C58 /* Copy Pods Resources */,
+				5282CD53163B330900E84C2E /* Mogenerator */,
 			);
 			buildRules = (
 			);
@@ -853,6 +880,20 @@
 			shellPath = /bin/zsh;
 			shellScript = "build_number=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" Resources/Info.plist`\nshort_version=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" Resources/Info.plist`\nbuild_number=$(($build_number + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $build_number\" Resources/Info.plist\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:1:DefaultValue $short_version($build_number)\" Resources/Settings.bundle/Root.plist";
 		};
+		5282CD53163B330900E84C2E /* Mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Mogenerator;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "mogenerator --template-var arc=true -m Resources/DataModel/TimeOutBuddy.xcdatamodeld/TimeOutBuddy.xcdatamodel -H Code/Models -M Code/Models/Generated/";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -874,6 +915,8 @@
 				52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */,
 				524ED1F5160992F0006CD68C /* NSMutableArray+TOAdditions.m in Sources */,
 				52BBE57A163B144D000A2DDC /* TOChildrenController.m in Sources */,
+				5282CD5A163B337600E84C2E /* _TOChild.m in Sources */,
+				5282CD5B163B337600E84C2E /* TOChild.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

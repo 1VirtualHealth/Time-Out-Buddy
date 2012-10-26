@@ -141,6 +141,8 @@
 		5299152815A7BEB80035B896 /* AVAudioPlayer+PGFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */; };
 		52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4D03C15E2B67700EC3C54 /* TOHelpController.m */; };
 		52A57F5515B77A600050C53C /* audio.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F5415B77A600050C53C /* audio.plist */; };
+		52BBE574163B11DB000A2DDC /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 52BBE573163B11DB000A2DDC /* gear.png */; };
+		52BBE57A163B144D000A2DDC /* TOChildrenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BBE579163B144D000A2DDC /* TOChildrenController.m */; };
 		52BF99B715AB3B4F00BC512B /* ages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52BF99B615AB3B4F00BC512B /* ages.plist */; };
 		52BF99BD15AB4EC600BC512B /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */; };
 		52C4207815A2830F00D70783 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C4207715A2830F00D70783 /* UIKit.framework */; };
@@ -298,6 +300,9 @@
 		52A4D03B15E2B67700EC3C54 /* TOHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOHelpController.h; sourceTree = "<group>"; };
 		52A4D03C15E2B67700EC3C54 /* TOHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOHelpController.m; sourceTree = "<group>"; };
 		52A57F5415B77A600050C53C /* audio.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = audio.plist; sourceTree = "<group>"; };
+		52BBE573163B11DB000A2DDC /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
+		52BBE578163B144D000A2DDC /* TOChildrenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOChildrenController.h; sourceTree = "<group>"; };
+		52BBE579163B144D000A2DDC /* TOChildrenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOChildrenController.m; sourceTree = "<group>"; };
 		52BF99B615AB3B4F00BC512B /* ages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ages.plist; sourceTree = "<group>"; };
 		52BF99BB15AB4EC600BC512B /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
@@ -482,6 +487,7 @@
 		5299151415A7B1790035B896 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				52BBE573163B11DB000A2DDC /* gear.png */,
 				524ED22E160BC8DA006CD68C /* Default-Landscape@2x.png */,
 				524ED22F160BC8DA006CD68C /* Default-Landscape.png */,
 				524ED22C160BB65C006CD68C /* Default@2x.png */,
@@ -598,6 +604,8 @@
 				5208DB7A15A77F8D00052CB3 /* TOMainController.m */,
 				52A4D03B15E2B67700EC3C54 /* TOHelpController.h */,
 				52A4D03C15E2B67700EC3C54 /* TOHelpController.m */,
+				52BBE578163B144D000A2DDC /* TOChildrenController.h */,
+				52BBE579163B144D000A2DDC /* TOChildrenController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -810,6 +818,7 @@
 				524ED231160BC8DA006CD68C /* Default-Landscape.png in Resources */,
 				524ED233160BC905006CD68C /* Icon-144.png in Resources */,
 				524ED235160BCE96006CD68C /* Settings.bundle in Resources */,
+				52BBE574163B11DB000A2DDC /* gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +873,7 @@
 				5236BAC415B0905800FC6985 /* NSArray+TOAdditions.m in Sources */,
 				52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */,
 				524ED1F5160992F0006CD68C /* NSMutableArray+TOAdditions.m in Sources */,
+				52BBE57A163B144D000A2DDC /* TOChildrenController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

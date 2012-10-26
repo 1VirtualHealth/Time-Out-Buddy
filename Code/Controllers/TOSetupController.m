@@ -12,6 +12,7 @@
 #import "TOAgePickerView.h"
 #import "GradientButton.h"
 #import "Constants.h"
+#import "TOChildrenController.h"
 
 
 @interface TOSetupController ()
@@ -160,6 +161,19 @@
         controller.onEndHelp = ^{
             [self dismissViewControllerAnimated:YES completion:nil];
         };
+    }
+    else if ([segue.identifier isEqualToString:@"childrenSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        TOChildrenController *controller = navigationController.topViewController;
+        controller.onEndBlock = ^{
+            if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }
+                 
+        };
+        
     }
 }
 

@@ -134,6 +134,8 @@
 		52823E7B15B44D8A00E58978 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52823E7A15B44D8A00E58978 /* images.plist */; };
 		5282CD5A163B337600E84C2E /* _TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD57163B337500E84C2E /* _TOChild.m */; };
 		5282CD5B163B337600E84C2E /* TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD59163B337500E84C2E /* TOChild.m */; };
+		5282CD5D163B389900E84C2E /* TimeOutBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52C4209D15A2848C00D70783 /* TimeOutBuddy.xcdatamodeld */; };
+		5282CD60163B47FA00E84C2E /* TOChildDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD5F163B47FA00E84C2E /* TOChildDetailController.m */; };
 		5295ECEA15AF9A94008F7670 /* transparent_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5295ECE915AF9A94008F7670 /* transparent_logo.png */; };
 		5295ED9615B078B9008F7670 /* colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5295ED9515B078B9008F7670 /* colors.plist */; };
 		529914F815A78A010035B896 /* TOAgePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 529914F715A78A010035B896 /* TOAgePickerView.m */; };
@@ -291,6 +293,8 @@
 		5282CD57163B337500E84C2E /* _TOChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TOChild.m; sourceTree = "<group>"; };
 		5282CD58163B337500E84C2E /* TOChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOChild.h; sourceTree = "<group>"; };
 		5282CD59163B337500E84C2E /* TOChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOChild.m; sourceTree = "<group>"; };
+		5282CD5E163B47FA00E84C2E /* TOChildDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOChildDetailController.h; sourceTree = "<group>"; };
+		5282CD5F163B47FA00E84C2E /* TOChildDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOChildDetailController.m; sourceTree = "<group>"; };
 		5295ECE915AF9A94008F7670 /* transparent_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent_logo.png; sourceTree = "<group>"; };
 		5295ED9515B078B9008F7670 /* colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = colors.plist; sourceTree = "<group>"; };
 		529914F615A78A010035B896 /* TOAgePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOAgePickerView.h; sourceTree = "<group>"; };
@@ -632,6 +636,8 @@
 				52A4D03C15E2B67700EC3C54 /* TOHelpController.m */,
 				52BBE578163B144D000A2DDC /* TOChildrenController.h */,
 				52BBE579163B144D000A2DDC /* TOChildrenController.m */,
+				5282CD5E163B47FA00E84C2E /* TOChildDetailController.h */,
+				5282CD5F163B47FA00E84C2E /* TOChildDetailController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -917,6 +923,8 @@
 				52BBE57A163B144D000A2DDC /* TOChildrenController.m in Sources */,
 				5282CD5A163B337600E84C2E /* _TOChild.m in Sources */,
 				5282CD5B163B337600E84C2E /* TOChild.m in Sources */,
+				5282CD5D163B389900E84C2E /* TimeOutBuddy.xcdatamodeld in Sources */,
+				5282CD60163B47FA00E84C2E /* TOChildDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

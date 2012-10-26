@@ -23,7 +23,7 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 
 - (void)setupDatabase
 {
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"TimeOutBuddy.db"];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"TimeOutBuddy.db"];
 }
 
 - (void)setupLogging
@@ -42,8 +42,9 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [self setupDatabase];
     [self setupLogging];
+    [self setupDatabase];
+
     UIStoryboard *storyboard;
     if (isPad()) {
         storyboard = [UIStoryboard storyboardWithName:@"TimeoutBuddy-iPad" bundle:nil];

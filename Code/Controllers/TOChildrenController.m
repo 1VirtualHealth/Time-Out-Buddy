@@ -7,22 +7,23 @@
 //
 
 #import "TOChildrenController.h"
+#import "TOChild.h"
 #import "UIBarButtonItem+BlocksKit.h"
+#import "TOChildDetailController.h"
 
-@interface TOChildrenController ()
+@interface TOChildrenController ()<NSFetchedResultsControllerDelegate>
+
+- (IBAction)doneButtonPressed:(id)sender;
+- (IBAction)addButtonPressed:(id)sender;
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation TOChildrenController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
+
 
 - (void)viewDidLoad
 {
@@ -30,14 +31,26 @@
 
     // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
- 
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone handler:^(id sender) {
-        _onEndBlock();
-    }];
     
-    self.navigationItem.leftBarButtonItem = doneButton;
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSFetchRequest *fetchRequest = [TOChild MR_requestAll];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"birthday" ascending:YES]]];
+    self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
+    self.fetchedResultsController.delegate = self;
+    [self.fetchedResultsController performFetch:nil];
+
+
+}
+
+#pragma mark - IBAction methods
+
+- (IBAction)doneButtonPressed:(id)sender
+{
+    _onEndBlock();
+}
+- (IBAction)addButtonPressed:(id)sender
+{
+    TOChildDetailController *controller = [[TOChildDetailController alloc] init];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 
@@ -45,16 +58,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 1;
+    return [[self.fetchedResultsController sections] count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 1;
+    id<NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,6 +76,8 @@
     }
     // Configure the cell...
     
+    TOChild *child = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = child.name;
     return cell;
 }
 
@@ -100,13 +112,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
 }
 
+#pragma mark - NSFetchedResultsControllerDelegate methods
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView reloadData];
+}
 @end

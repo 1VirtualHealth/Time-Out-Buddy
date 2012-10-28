@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class TOChild;
+
+
 @interface TOChildDetailController : UIViewController
+
+- (id)initWithChild:(TOChild *)child;
+
+
+
+@property (nonatomic, strong) TOChild *child;
 
 @end

@@ -24,6 +24,7 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 - (void)setupDatabase
 {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"TimeOutBuddy.db"];
+    [NSManagedObjectContext MR_defaultContext];
 }
 
 - (void)setupLogging

@@ -33,7 +33,7 @@
     self.clearsSelectionOnViewWillAppear = NO;
     
     NSFetchRequest *fetchRequest = [TOChild MR_requestAll];
-    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"birthday" ascending:YES]]];
+    [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"birthdate" ascending:YES]]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
     self.fetchedResultsController.delegate = self;
     [self.fetchedResultsController performFetch:nil];
@@ -49,7 +49,11 @@
 }
 - (IBAction)addButtonPressed:(id)sender
 {
-    TOChildDetailController *controller = [[TOChildDetailController alloc] init];
+    //Create a scratch context
+    ;
+    TOChild *newChild = [TOChild MR_createInContext:[NSManagedObjectContext MR_context]];
+    
+    TOChildDetailController *controller = [[TOChildDetailController alloc] initWithChild:newChild];
     [self presentViewController:controller animated:YES completion:nil];
 }
 
@@ -105,14 +109,27 @@
 */
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"childDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        if (indexPath) {
+            TOChild *child = [self.fetchedResultsController objectAtIndexPath:indexPath];
+            TOChildDetailController *controller = [segue destinationViewController];
+            controller.child = child;
+            [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        }
 
+    }
+}
 
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [self performSegueWithIdentifier:@"childDetails" sender:nil];
+    
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate methods

@@ -131,6 +131,8 @@
 		524ED231160BC8DA006CD68C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 524ED22F160BC8DA006CD68C /* Default-Landscape.png */; };
 		524ED233160BC905006CD68C /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = 524ED232160BC905006CD68C /* Icon-144.png */; };
 		524ED235160BCE96006CD68C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 524ED234160BCE96006CD68C /* Settings.bundle */; };
+		526A6457163EE71B001ECB5D /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A6455163EE71B001ECB5D /* settings.png */; };
+		526A6458163EE71B001ECB5D /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A6456163EE71B001ECB5D /* settings@2x.png */; };
 		52823E7B15B44D8A00E58978 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52823E7A15B44D8A00E58978 /* images.plist */; };
 		5282CD5A163B337600E84C2E /* _TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD57163B337500E84C2E /* _TOChild.m */; };
 		5282CD5B163B337600E84C2E /* TOChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 5282CD59163B337500E84C2E /* TOChild.m */; };
@@ -145,7 +147,6 @@
 		5299152815A7BEB80035B896 /* AVAudioPlayer+PGFade.m in Sources */ = {isa = PBXBuildFile; fileRef = 5299152715A7BEB80035B896 /* AVAudioPlayer+PGFade.m */; };
 		52A4D03D15E2B67700EC3C54 /* TOHelpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A4D03C15E2B67700EC3C54 /* TOHelpController.m */; };
 		52A57F5515B77A600050C53C /* audio.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52A57F5415B77A600050C53C /* audio.plist */; };
-		52BBE574163B11DB000A2DDC /* gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 52BBE573163B11DB000A2DDC /* gear.png */; };
 		52BBE57A163B144D000A2DDC /* TOChildrenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BBE579163B144D000A2DDC /* TOChildrenController.m */; };
 		52BF99B715AB3B4F00BC512B /* ages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52BF99B615AB3B4F00BC512B /* ages.plist */; };
 		52BF99BD15AB4EC600BC512B /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52BF99BC15AB4EC600BC512B /* UIColor+Additions.m */; };
@@ -288,6 +289,8 @@
 		524ED22F160BC8DA006CD68C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		524ED232160BC905006CD68C /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		524ED234160BCE96006CD68C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		526A6455163EE71B001ECB5D /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		526A6456163EE71B001ECB5D /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		52823E7A15B44D8A00E58978 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
 		5282CD56163B337500E84C2E /* _TOChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TOChild.h; sourceTree = "<group>"; };
 		5282CD57163B337500E84C2E /* _TOChild.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TOChild.m; sourceTree = "<group>"; };
@@ -310,7 +313,6 @@
 		52A4D03B15E2B67700EC3C54 /* TOHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOHelpController.h; sourceTree = "<group>"; };
 		52A4D03C15E2B67700EC3C54 /* TOHelpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOHelpController.m; sourceTree = "<group>"; };
 		52A57F5415B77A600050C53C /* audio.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = audio.plist; sourceTree = "<group>"; };
-		52BBE573163B11DB000A2DDC /* gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear.png; sourceTree = "<group>"; };
 		52BBE578163B144D000A2DDC /* TOChildrenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOChildrenController.h; sourceTree = "<group>"; };
 		52BBE579163B144D000A2DDC /* TOChildrenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOChildrenController.m; sourceTree = "<group>"; };
 		52BF99B615AB3B4F00BC512B /* ages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ages.plist; sourceTree = "<group>"; };
@@ -516,7 +518,8 @@
 		5299151415A7B1790035B896 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				52BBE573163B11DB000A2DDC /* gear.png */,
+				526A6455163EE71B001ECB5D /* settings.png */,
+				526A6456163EE71B001ECB5D /* settings@2x.png */,
 				524ED22E160BC8DA006CD68C /* Default-Landscape@2x.png */,
 				524ED22F160BC8DA006CD68C /* Default-Landscape.png */,
 				524ED22C160BB65C006CD68C /* Default@2x.png */,
@@ -851,7 +854,8 @@
 				524ED231160BC8DA006CD68C /* Default-Landscape.png in Resources */,
 				524ED233160BC905006CD68C /* Icon-144.png in Resources */,
 				524ED235160BCE96006CD68C /* Settings.bundle in Resources */,
-				52BBE574163B11DB000A2DDC /* gear.png in Resources */,
+				526A6457163EE71B001ECB5D /* settings.png in Resources */,
+				526A6458163EE71B001ECB5D /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

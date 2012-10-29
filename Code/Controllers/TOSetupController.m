@@ -58,11 +58,11 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 
         self.agePicker.onPickerDone = ^() {
-            if (self.agePicker.currentAge) {
+            if (bSelf.agePicker.currentAge) {
                 [bSelf setAgeButtonDisplay:self.agePicker.currentAge[@"name"]];
             }
             else {
-                [self setAgeButtonDisplay:nil];
+                [bSelf setAgeButtonDisplay:nil];
             }
             self.startButton.enabled = self.agePicker.currentAge != nil;
             [bSelf dismissAgePickerAnimated:YES];

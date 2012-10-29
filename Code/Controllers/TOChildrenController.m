@@ -86,28 +86,22 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        TOChild *deletedChild = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [deletedChild MR_deleteEntity];
+        
+        [[NSManagedObjectContext MR_defaultContext] MR_saveNestedContexts];
+        
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
 }
-*/
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -136,6 +130,7 @@
 #pragma mark - NSFetchedResultsControllerDelegate methods
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    DDLogVerbose(@"Reloading data");
     [self.tableView reloadData];
 }
 @end

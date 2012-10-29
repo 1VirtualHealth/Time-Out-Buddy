@@ -54,8 +54,15 @@
         
         [self sizeToFit];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataChanged:) name:NSManagedObjectContextDidSaveNotification object:nil];
+        
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)done:(id)sender
@@ -63,6 +70,14 @@
     _onPickerDone();
 }
 
+
+- (void)dataChanged:(NSNotification *)notification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.children = [TOChild MR_findAll];
+        [self.agePicker reloadAllComponents];
+    });
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -89,6 +104,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
+    DDLogVerbose(@"getTitleforRow:%d", row);
     if (row < [self.children count]) {
         TOChild *child = self.children[row];
         return child.name;
@@ -106,6 +122,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    DDLogVerbose(@"didSelectRow:(%d)", row);
     if (row < [self.children count]) {
         TOChild *child = self.children[row];
         //look up the appropriate dictionary in the array

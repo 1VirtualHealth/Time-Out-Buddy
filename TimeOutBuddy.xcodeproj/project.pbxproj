@@ -689,12 +689,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52C4209015A2830F00D70783 /* Build configuration list for PBXNativeTarget "TimeOutBuddy" */;
 			buildPhases = (
+				5282CD53163B330900E84C2E /* Mogenerator */,
 				52C4206F15A2830F00D70783 /* Sources */,
 				52C4207015A2830F00D70783 /* Frameworks */,
 				521E9CC315ABC45500F65D39 /* Increment Build Number */,
 				52C4207115A2830F00D70783 /* Resources */,
 				2D8839D6B93F4E8693069C58 /* Copy Pods Resources */,
-				5282CD53163B330900E84C2E /* Mogenerator */,
 			);
 			buildRules = (
 			);
@@ -909,7 +909,7 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
+			shellPath = /bin/zsh;
 			shellScript = "mogenerator --template-var arc=true -m Resources/DataModel/TimeOutBuddy.xcdatamodeld/TimeOutBuddy.xcdatamodel -H Code/Models -M Code/Models/Generated/";
 		};
 /* End PBXShellScriptBuildPhase section */

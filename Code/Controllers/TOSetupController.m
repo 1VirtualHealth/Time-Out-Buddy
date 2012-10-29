@@ -192,6 +192,11 @@
 }
 
 
+- (IBAction)settingsPressed:(id)sender
+{
+
+}
+
 - (IBAction)chooseAge:(id)sender
 {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {

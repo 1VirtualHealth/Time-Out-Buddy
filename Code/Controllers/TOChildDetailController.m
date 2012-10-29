@@ -9,15 +9,21 @@
 #import "TOChildDetailController.h"
 #import "TOChild.h"
 
-@interface TOChildDetailController ()
+@interface TOChildDetailController ()<UITextFieldDelegate>
+
+- (void)hideKeyboardIfNecessary:(UITouch *)touch;
+- (BOOL)validate;
 
 - (IBAction)cancelButtonPressed:(id)sender;
 - (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)dateValueChanged:(id)sender;
 
 @property (nonatomic, readonly) NSManagedObjectContext *scratchContext;
 
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UIDatePicker *birthdayPicker;
+
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *saveButton;
 
 @end
 
@@ -26,6 +32,7 @@
 @synthesize scratchContext = _scratchContext;
 @synthesize child = _child;
 
+#pragma mark - Private methods
 
 - (NSManagedObjectContext *)scratchContext
 {
@@ -36,39 +43,21 @@
     return _scratchContext;
 }
 
-- (void)setChild:(TOChild *)child
+- (void)hideKeyboardIfNecessary:(UITouch *)touch
 {
-    if(child != _child) {
-        _child = [child MR_inContext:self.scratchContext];
+
+    if ([self.nameField isFirstResponder] && touch.view != self.nameField) {
+        [self.nameField resignFirstResponder];
     }
 }
 
-- (TOChild *)child
+- (BOOL)validate
 {
-    if (_child == nil) {
-        _child = [TOChild MR_createInContext:self.scratchContext];
-        _child.birthdate = [NSDate date];
-    }
-    
-    return _child;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.nameField.text = self.child.name;
-    self.birthdayPicker.date = self.child.birthdate;
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return self.nameField.text.length > 0;
 }
 
 #pragma mark - IBAction methods
+
 
 - (IBAction)cancelButtonPressed:(id)sender
 {
@@ -87,8 +76,71 @@
     }];
     [[self presentingViewController] dismissViewControllerAnimated:YES
                                                         completion:nil];
+    
+    
+}
+
+- (IBAction)dateValueChanged:(id)sender
+{
+    [self hideKeyboardIfNecessary:nil];
+}
 
 
+#pragma mark - Public methods
+
+
+- (void)setChild:(TOChild *)child
+{
+    if(child != _child) {
+        _child = [child MR_inContext:self.scratchContext];
+    }
+}
+
+- (TOChild *)child
+{
+    if (_child == nil) {
+        _child = [TOChild MR_createInContext:self.scratchContext];
+        _child.birthdate = [NSDate date];
+    }
+    
+    return _child;
+}
+
+#pragma mark - UIViewController methods
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor underPageBackgroundColor];
+    self.nameField.text = self.child.name;
+    self.birthdayPicker.date = self.child.birthdate;
+    
+    self.saveButton.enabled = [self validate];
+
+	// Do any additional setup after loading the view.
+}
+
+
+#pragma mark - UIResponder methods
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self hideKeyboardIfNecessary:[touches anyObject]];
+    [super touchesBegan:touches withEvent:event];
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self hideKeyboardIfNecessary:nil];
+    return YES;
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    self.saveButton.enabled = textField.text.length - range.length + string.length > 0;
+    return YES;
 }
 
 

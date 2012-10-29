@@ -92,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="-251" y="46"/>
         </scene>
-        <!--Children Controller-->
+        <!--Children Controller - Children-->
         <scene sceneID="gk7-Y0-UG0">
             <objects>
                 <viewController id="e45-Sp-UQk" customClass="TOChildrenController" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                             <outlet property="delegate" destination="e45-Sp-UQk" id="ywR-xP-cVl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KoB-f9-HH6">
+                    <navigationItem key="navigationItem" title="Children" id="KoB-f9-HH6">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="ZGF-L1-4qI">
                             <connections>
                                 <action selector="doneButtonPressed:" destination="e45-Sp-UQk" id="SXG-Bp-rem"/>
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="GB6-Q3-g1e">
+                                    <navigationItem title="Child" id="GB6-Q3-g1e">
                                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="UMz-Zj-KXj">
                                             <connections>
                                                 <action selector="cancelButtonPressed:" destination="ZyE-Iy-s2v" id="K6n-0e-An3"/>
@@ -154,11 +154,15 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Name" minimumFontSize="17" id="5m3-zz-l4i">
                                 <rect key="frame" x="20" y="82" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZyE-Iy-s2v" id="NWJ-4x-V0W"/>
+                                </connections>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="Oay-mt-Duf">
-                                <rect key="frame" x="0.0" y="191" width="320" height="216"/>
+                                <rect key="frame" x="0.0" y="156" width="320" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="373126842.32685697">
                                     <!--2012-10-28 14:20:42 +0000-->
@@ -184,7 +188,24 @@ AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 </data>
                                 </timeZone>
+                                <connections>
+                                    <action selector="dateValueChanged:" destination="ZyE-Iy-s2v" eventType="valueChanged" id="jmz-jL-331"/>
+                                </connections>
                             </datePicker>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter you child's name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K4y-qt-FLv">
+                                <rect key="frame" x="20" y="53" width="275" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Birthdate:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aw4-xz-upo">
+                                <rect key="frame" x="20" y="129" width="275" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -192,6 +213,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="birthdayPicker" destination="Oay-mt-Duf" id="isP-gj-Rlz"/>
                         <outlet property="nameField" destination="5m3-zz-l4i" id="od7-7L-ugF"/>
+                        <outlet property="saveButton" destination="NK5-C4-8ir" id="6wR-cQ-dJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yp-7s-ovg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,9 +310,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TOChildDetailController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="dateValueChanged:"/>
                 <relationship kind="action" name="saveButtonPressed:"/>
                 <relationship kind="outlet" name="birthdayPicker" candidateClass="UIDatePicker"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="TOChildrenController" superclassName="UITableViewController">

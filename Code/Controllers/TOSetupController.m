@@ -12,20 +12,23 @@
 #import "TOAgePickerView.h"
 #import "GradientButton.h"
 #import "Constants.h"
+#import "TOChildrenController.h"
+
 
 @interface TOSetupController ()
 
 @property (strong, nonatomic) TOAgePickerView *agePicker;
+@property (nonatomic, strong) UIPopoverController *popover;
 
-- (void)setAgeButtonDisplay:(NSString *)age;
+- (void)setAgeButtonDisplay:(NSString *)displayString;
 - (void)populateVersionLabel;
+- (void)showAgePickerPopover;
+
 @end
 
 @implementation TOSetupController
 
-@synthesize agePicker = _agePicker;
-@synthesize startButton = _startButton;
-@synthesize selectAgeButton = _selectAgeButton;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +42,6 @@
 - (void)populateVersionLabel
 {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *label = [NSString stringWithFormat:@"%@ (%@)", [infoDict valueForKey:@"CFBundleShortVersionString"], [infoDict valueForKey:@"CFBundleVersion"]];
 }
 
 - (void)viewDidLoad
@@ -49,21 +51,44 @@
     
     [self populateVersionLabel];
     
-    [self.selectAgeButton setTitle:@"Choose Age                  \u25BC" forState:UIControlStateNormal];
+    [self setAgeButtonDisplay:nil];
+    self.startButton.enabled = NO;
     self.agePicker = [[TOAgePickerView alloc] initWithFrame:CGRectZero];
-    __weak id bSelf = self;
-    self.agePicker.onPickerDone = ^() {
-        NSString *ageLabel = [self.agePicker.currentAge valueForKey:@"name"];
-        [bSelf setAgeButtonDisplay:ageLabel];
-        [bSelf dismissAgePickerAnimated:YES];
-    };
+    __weak TOSetupController *bSelf = self;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+
+        self.agePicker.onPickerDone = ^() {
+            if (bSelf.agePicker.currentAge) {
+                [bSelf setAgeButtonDisplay:self.agePicker.currentAge[@"name"]];
+            }
+            else {
+                [bSelf setAgeButtonDisplay:nil];
+            }
+            self.startButton.enabled = self.agePicker.currentAge != nil;
+            [bSelf dismissAgePickerAnimated:YES];
+        };
+        CGRect ageFrame = CGRectMake(0, CGRectGetMinY(self.view.frame) + CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.agePicker.frame), CGRectGetWidth(self.agePicker.frame), CGRectGetHeight(self.agePicker.frame));
+        self.agePicker.frame = ageFrame;
+        [self.view addSubview:self.agePicker];
+        [self dismissAgePickerAnimated:NO];
+    }
+    else {
+        self.agePicker.onPickerDone = ^() {
+            if (self.agePicker.currentAge) {
+                [bSelf setAgeButtonDisplay:self.agePicker.currentAge[@"name"]];
+            }
+            else {
+                [bSelf setAgeButtonDisplay:nil];
+            }
+            self.startButton.enabled = self.agePicker.currentAge != nil;
+
+            [bSelf.popover dismissPopoverAnimated:YES];
+        };
+    }
     
-    //place the agePicker at the bottom
-    CGRect ageFrame = CGRectMake(0, CGRectGetMinY(self.view.frame) + CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.agePicker.frame), CGRectGetWidth(self.agePicker.frame), CGRectGetHeight(self.agePicker.frame));
-    self.agePicker.frame = ageFrame;
-    [self.view addSubview:self.agePicker];
+
     
-    [self dismissAgePickerAnimated:NO];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -78,14 +103,18 @@
     return YES;
 }
 
-- (void)setAgeButtonDisplay:(NSString *)age
+- (void)setAgeButtonDisplay:(NSString *)displayString
 {
-    NSString *ageString = [NSString stringWithFormat:@"%@ years old                 \u25BC", age];
-    [self.selectAgeButton setTitle:ageString forState:UIControlStateNormal];
+    if (displayString == nil) {
+        displayString = @"Choose Child or Age";
+    }
+    [self.selectAgeButton setTitle:displayString forState:UIControlStateNormal];
 }
 
 - (void)showAgePickerAnimated:(BOOL)animated
 {
+
+    
     if (animated) {
         [UIView beginAnimations:@"slideIn" context:nil];
     }
@@ -98,6 +127,7 @@
     }
 }
 
+
 - (void)dismissAgePickerAnimated:(BOOL)animated
 {
     if(animated) {
@@ -105,12 +135,31 @@
     }
     
     self.agePicker.frame = CGRectOffset(self.agePicker.frame, 0, CGRectGetHeight(self.agePicker.frame));
-
+    
     
     if (animated) {
         [UIView commitAnimations];
     }
+    
 }
+- (void)showAgePickerPopover
+{
+    if (self.popover == nil) {
+        UIViewController *controller = [[UIViewController alloc] init];
+        self.agePicker.frame = CGRectMake(0,0,320,CGRectGetHeight(self.agePicker.frame));
+        
+
+        controller.view.frame = self.agePicker.bounds;
+        [controller.view addSubview:self.agePicker];
+        controller.modalInPopover = YES;
+        self.popover = [[UIPopoverController alloc] initWithContentViewController:controller];
+        [self.popover setPopoverContentSize:self.agePicker.bounds.size];
+    }
+    
+    [self.popover presentPopoverFromRect:self.selectAgeButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -127,12 +176,35 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         };
     }
+    else if ([segue.identifier isEqualToString:@"childrenSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        TOChildrenController *controller = (TOChildrenController *)navigationController.topViewController;
+        controller.onEndBlock = ^{
+            if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+                [self dismissViewControllerAnimated:YES completion:^{
+                    
+                }];
+            }
+                 
+        };
+        
+    }
 }
 
 
+- (IBAction)settingsPressed:(id)sender
+{
+
+}
+
 - (IBAction)chooseAge:(id)sender
 {
-    [self showAgePickerAnimated:YES];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self showAgePickerAnimated:YES];
+    }
+    else {
+        [self showAgePickerPopover];
+    }
 }
 
 @end

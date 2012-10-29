@@ -15,10 +15,11 @@ typedef void (^CompleteBlock)();
 
 @interface TOSlideManager : NSObject
 
+
 @property (nonatomic, assign) NSDictionary *ageGroup;
 @property (nonatomic, copy) TickBlock onTick;
 @property (nonatomic, copy) CompleteBlock onComplete;
 
 - (void)start;
-
+- (void)stop;
 @end

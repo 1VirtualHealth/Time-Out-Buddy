@@ -7,27 +7,26 @@
 //
 
 #import "TOAgePickerView.h"
+#import "TOChild.h"
 
 @interface TOAgePickerView()<UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) UIPickerView *agePicker;
 @property (strong, nonatomic) NSArray *ages;
+@property (strong, nonatomic) NSArray *children;
 @end
 
 @implementation TOAgePickerView
 
-@synthesize onPickerDone = _onPickerDone;
-@synthesize agePicker = _agePicker;
-@synthesize ages = _ages;
-@synthesize currentAge = _currentAge;
+
 - (id)initWithFrame:(CGRect)frame
 {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    self = [super initWithFrame:CGRectMake(0,0,CGRectGetWidth(screenRect),244)];
+    self = [super initWithFrame:CGRectMake(0,0,320,244)];
     if (self) {
         UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,CGRectGetWidth(self.bounds),44)];
         toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         toolbar.tintColor = [UIColor blackColor];
+        
         UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
         
         UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -39,7 +38,11 @@
         
         NSString *ageFile = [[NSBundle mainBundle] pathForResource:@"ages" ofType:@"plist"];
         self.ages = [NSArray arrayWithContentsOfFile:ageFile];
-        self.currentAge = [self.ages objectAtIndex:0];
+        
+        self.children = [TOChild MR_findAll];
+        
+    
+
         self.agePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,44,CGRectGetWidth(self.bounds), 200)];
         self.agePicker.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         self.agePicker.dataSource = self;
@@ -47,10 +50,19 @@
         self.agePicker.showsSelectionIndicator = YES;
         [self addSubview:self.agePicker];
         
+        [self pickerView:self.agePicker didSelectRow:0 inComponent:0];
+        
         [self sizeToFit];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataChanged:) name:NSManagedObjectContextDidSaveNotification object:nil];
         
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)done:(id)sender
@@ -58,6 +70,14 @@
     _onPickerDone();
 }
 
+
+- (void)dataChanged:(NSNotification *)notification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.children = [TOChild MR_findAll];
+        [self.agePicker reloadAllComponents];
+    });
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -76,21 +96,52 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [self.ages count];
+    
+    return [self.ages count] + [self.children count] + 1;
 }
 
 #pragma mark - UIPickerViewDelegate methods
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSDictionary *age = [self.ages objectAtIndex:row];
-    return [NSString stringWithFormat:@"%@ years old", [age valueForKey:@"name"]];
+    DDLogVerbose(@"getTitleforRow:%d", row);
+    if (row < [self.children count]) {
+        TOChild *child = self.children[row];
+        return child.name;
+    }
+    else if (row == [self.children count]) {
+        return @"=======================";
+    }
+    else {
+        NSInteger index = row - [self.children count] -1;
+        NSDictionary *age = [self.ages objectAtIndex:index];
+        return age[@"name"];
+    }
+
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    NSDictionary *age = [self.ages objectAtIndex:row];
-    self.currentAge = age;
+    DDLogVerbose(@"didSelectRow:(%d)", row);
+    if (row < [self.children count]) {
+        TOChild *child = self.children[row];
+        //look up the appropriate dictionary in the array
+        NSArray *filtered = [self.ages filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"age == %d", [child ageInYears]]];
+        if ([filtered count] == 0)
+            filtered = self.ages;
+       
+        NSMutableDictionary *ageDict = [NSMutableDictionary dictionaryWithDictionary:filtered[0]];
+        ageDict[@"name"] = child.name;
+        self.currentAge = ageDict;
+    }
+    else if (row == [self.children count]) {
+        self.currentAge = nil;
+    }
+    else {
+        NSInteger index = row - [self.children count] - 1;
+        NSDictionary *age = [self.ages objectAtIndex:index];
+        self.currentAge = age;
+    }
 }
 
 @end

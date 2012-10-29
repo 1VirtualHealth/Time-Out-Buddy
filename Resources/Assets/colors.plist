@@ -1,54 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
+<dict>
+	<key>finish</key>
 	<dict>
-		<key>start</key>
-		<dict>
-			<key>fileName</key>
-			<string>stop.png</string>
-		</dict>
-		<key>color</key>
-		<string>#ff0000</string>
-		<key>name</key>
-		<string>Red</string>
-		<key>rate</key>
-		<integer>3</integer>
-	</dict>
-	<dict>
-		<key>color</key>
-		<string>#ffa500</string>
-		<key>name</key>
-		<string>Orange</string>
-		<key>rate</key>
-		<integer>5</integer>
-	</dict>
-	<dict>
-		<key>color</key>
-		<string>#ffff00</string>
-		<key>name</key>
-		<string>Yellow</string>
-		<key>rate</key>
-		<integer>7</integer>
-	</dict>
-	<dict>
+		<key>label</key>
+		<string>Great Job!</string>
+		<key>fileName</key>
+		<string>go.png</string>
 		<key>color</key>
 		<string>#00ff00</string>
-		<key>images</key>
-		<array>
-
-		</array>
-		<key>finish</key>
-		<dict>
-			<key>label</key>
-			<string>Great Job!</string>
-			<key>fileName</key>
-			<string>go.png</string>
-		</dict>
-		<key>name</key>
-		<string>Green</string>
-		<key>rate</key>
-		<integer>9</integer>
 	</dict>
-</array>
+	<key>colors</key>
+	<array>
+		<dict>
+			<key>color</key>
+			<string>#ff0000</string>
+			<key>name</key>
+			<string>Red</string>
+			<key>rate</key>
+			<integer>3</integer>
+			<key>start</key>
+			<dict>
+				<key>duration</key>
+				<string>20</string>
+				<key>fileName</key>
+				<string>stop.png</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>color</key>
+			<string>#ffa500</string>
+			<key>name</key>
+			<string>Orange</string>
+			<key>rate</key>
+			<integer>5</integer>
+		</dict>
+		<dict>
+			<key>color</key>
+			<string>#ffff00</string>
+			<key>name</key>
+			<string>Yellow</string>
+			<key>rate</key>
+			<integer>7</integer>
+		</dict>
+		<dict>
+			<key>color</key>
+			<string>#00ff00</string>
+			<key>name</key>
+			<string>Green</string>
+			<key>rate</key>
+			<integer>9</integer>
+		</dict>
+	</array>
+</dict>
 </plist>

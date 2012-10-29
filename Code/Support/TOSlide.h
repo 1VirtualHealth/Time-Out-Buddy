@@ -10,12 +10,16 @@
 
 @interface TOSlide : NSObject
 
-+ (TOSlide *)slideWithImage:(UIImage *)image color:(UIColor *)color label:(NSString *)label;
-- (id)initWithImage:(UIImage *)image color:(UIColor *)color label:(NSString *)label;
++ (TOSlide *)slideWithImage:(UIImage *)image color:(UIColor *)color label:(NSString *)label duration:(NSTimeInterval)duration;
+- (id)initWithImage:(UIImage *)image color:(UIColor *)color label:(NSString *)label duration:(NSTimeInterval)duration;
+
++(TOSlide *)slideWithImageName:(NSString *)imageName color:(UIColor *)color label:(NSString *)label duration:(NSTimeInterval)duration;
+- (id)initWithImageName:(NSString *)imageName color:(UIColor *)color label:(NSString *)label duration:(NSTimeInterval)duration;
 
 
-@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, readonly, strong) UIImage *image;
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) NSString *label;
+@property NSTimeInterval duration;
 
 @end

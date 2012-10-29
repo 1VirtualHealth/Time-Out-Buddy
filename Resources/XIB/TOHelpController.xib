@@ -46,7 +46,6 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{0, 44}, {320, 416}}</string>
 						<reference key="NSSuperview" ref="1043878361"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="876508768"/>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -60,7 +59,6 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrame">{{20, 424}, {280, 36}}</string>
 						<reference key="NSSuperview" ref="1043878361"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -82,12 +80,11 @@
 						<object class="NSPSMatrix" key="NSFrameMatrix"/>
 						<string key="NSFrameSize">{320, 44}</string>
 						<reference key="NSSuperview" ref="1043878361"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="562395586"/>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSColor" key="IBUITintColor">
 							<int key="NSColorSpace">2</int>
-							<bytes key="NSRGB">MC41NTI5NDExNzY1IDAuMTU2ODYyNzQ1MSAwLjc3NjQ3MDU4ODIAA</bytes>
+							<bytes key="NSRGB">MC42NjY2NjY2ODY1IDAuMjI3NDUwOTk2NiAwLjgyNzQ1MTA1MDMAA</bytes>
 						</object>
 						<array key="IBUIItems">
 							<object class="IBUINavigationItem" id="25834125">
@@ -107,7 +104,6 @@
 				<object class="NSPSMatrix" key="NSFrameMatrix"/>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1057332060"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -260,46 +256,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">14</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">TOHelpController</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="donePressed:">id</string>
-						<string key="pageControlPressed:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="donePressed:">
-							<string key="name">donePressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="pageControlPressed:">
-							<string key="name">pageControlPressed:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="helpScroller">UIScrollView</string>
-						<string key="pageControl">UIPageControl</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="helpScroller">
-							<string key="name">helpScroller</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="pageControl">
-							<string key="name">pageControl</string>
-							<string key="candidateClassName">UIPageControl</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/TOHelpController.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">

@@ -40,11 +40,18 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 
 }
 
+- (void)applyTheme
+{
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    navigationBar.tintColor = [UIColor colorWithRed:170/255.0 green:58/255.0 blue:211/255.0 alpha:1.0];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self setupLogging];
     [self setupDatabase];
+    [self applyTheme];
 
     UIStoryboard *storyboard;
     if (isPad()) {

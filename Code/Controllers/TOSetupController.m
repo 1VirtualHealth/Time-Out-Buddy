@@ -20,7 +20,7 @@
 @property (strong, nonatomic) TOAgePickerView *agePicker;
 @property (nonatomic, strong) UIPopoverController *popover;
 
-- (void)setAgeButtonDisplay:(NSString *)age;
+- (void)setAgeButtonDisplay:(NSString *)displayString;
 - (void)populateVersionLabel;
 - (void)showAgePickerPopover;
 
@@ -51,14 +51,20 @@
     
     [self populateVersionLabel];
     
-    [self.selectAgeButton setTitle:@"Choose Age                  \u25BC" forState:UIControlStateNormal];
+    [self setAgeButtonDisplay:nil];
+    self.startButton.enabled = NO;
     self.agePicker = [[TOAgePickerView alloc] initWithFrame:CGRectZero];
     __weak TOSetupController *bSelf = self;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 
         self.agePicker.onPickerDone = ^() {
-            NSString *ageLabel = [self.agePicker.currentAge valueForKey:@"name"];
-            [bSelf setAgeButtonDisplay:ageLabel];
+            if (self.agePicker.currentAge) {
+                [bSelf setAgeButtonDisplay:self.agePicker.currentAge[@"name"]];
+            }
+            else {
+                [self setAgeButtonDisplay:nil];
+            }
+            self.startButton.enabled = self.agePicker.currentAge != nil;
             [bSelf dismissAgePickerAnimated:YES];
         };
         CGRect ageFrame = CGRectMake(0, CGRectGetMinY(self.view.frame) + CGRectGetHeight(self.view.frame) - CGRectGetHeight(self.agePicker.frame), CGRectGetWidth(self.agePicker.frame), CGRectGetHeight(self.agePicker.frame));
@@ -68,8 +74,14 @@
     }
     else {
         self.agePicker.onPickerDone = ^() {
-            NSString *ageLabel = [self.agePicker.currentAge valueForKey:@"name"];
-            [bSelf setAgeButtonDisplay:ageLabel];
+            if (self.agePicker.currentAge) {
+                [bSelf setAgeButtonDisplay:self.agePicker.currentAge[@"name"]];
+            }
+            else {
+                [bSelf setAgeButtonDisplay:nil];
+            }
+            self.startButton.enabled = self.agePicker.currentAge != nil;
+
             [bSelf.popover dismissPopoverAnimated:YES];
         };
     }
@@ -91,10 +103,12 @@
     return YES;
 }
 
-- (void)setAgeButtonDisplay:(NSString *)age
+- (void)setAgeButtonDisplay:(NSString *)displayString
 {
-    NSString *ageString = [NSString stringWithFormat:@"%@ years old                 \u25BC", age];
-    [self.selectAgeButton setTitle:ageString forState:UIControlStateNormal];
+    if (displayString == nil) {
+        displayString = @"Choose Child or Age";
+    }
+    [self.selectAgeButton setTitle:displayString forState:UIControlStateNormal];
 }
 
 - (void)showAgePickerAnimated:(BOOL)animated
@@ -164,7 +178,7 @@
     }
     else if ([segue.identifier isEqualToString:@"childrenSegue"]) {
         UINavigationController *navigationController = [segue destinationViewController];
-        TOChildrenController *controller = navigationController.topViewController;
+        TOChildrenController *controller = (TOChildrenController *)navigationController.topViewController;
         controller.onEndBlock = ^{
             if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
                 [self dismissViewControllerAnimated:YES completion:^{

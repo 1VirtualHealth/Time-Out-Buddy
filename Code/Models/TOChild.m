@@ -6,7 +6,7 @@
 - (NSInteger)ageInYears
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit fromDate:[NSDate date] toDate:self.birthdate options:0];
+    NSDateComponents *dateComponents = [calendar components:NSYearCalendarUnit fromDate:self.birthdate toDate:[NSDate date] options:0];
     return [dateComponents year];
 }
 

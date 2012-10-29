@@ -77,12 +77,19 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     // Configure the cell...
     
     TOChild *child = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = child.name;
+    NSInteger age = [child ageInYears];
+    if (age < 1) {
+        cell.detailTextLabel.text = @"< 1 years old";
+    }
+    else {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%d years old", age];
+    }
     return cell;
 }
 

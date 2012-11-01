@@ -83,6 +83,7 @@
             self.startButton.enabled = self.agePicker.currentAge != nil;
 
             [bSelf.popover dismissPopoverAnimated:YES];
+            bSelf.popover = nil;
         };
     }
     
@@ -120,7 +121,7 @@
     }
     
     self.agePicker.frame = CGRectOffset(self.agePicker.frame, 0, -CGRectGetHeight(self.agePicker.frame));
-
+    [self.agePicker reload];
     
     if (animated) {
         [UIView commitAnimations];
@@ -147,7 +148,7 @@
     if (self.popover == nil) {
         UIViewController *controller = [[UIViewController alloc] init];
         self.agePicker.frame = CGRectMake(0,0,320,CGRectGetHeight(self.agePicker.frame));
-        
+        [self.agePicker reload];
 
         controller.view.frame = self.agePicker.bounds;
         [controller.view addSubview:self.agePicker];

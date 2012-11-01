@@ -18,6 +18,16 @@
 
 @implementation TOAgePickerView
 
+- (void)reload
+{
+    NSString *ageFile = [[NSBundle mainBundle] pathForResource:@"ages" ofType:@"plist"];
+    self.ages = [NSArray arrayWithContentsOfFile:ageFile];
+    
+    self.children = [TOChild MR_findAll];
+
+    [self pickerView:self.agePicker didSelectRow:0 inComponent:0];
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -36,11 +46,7 @@
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
         [self addSubview:toolbar];
         
-        NSString *ageFile = [[NSBundle mainBundle] pathForResource:@"ages" ofType:@"plist"];
-        self.ages = [NSArray arrayWithContentsOfFile:ageFile];
-        
-        self.children = [TOChild MR_findAll];
-        
+                
     
 
         self.agePicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0,44,CGRectGetWidth(self.bounds), 200)];
@@ -50,7 +56,7 @@
         self.agePicker.showsSelectionIndicator = YES;
         [self addSubview:self.agePicker];
         
-        [self pickerView:self.agePicker didSelectRow:0 inComponent:0];
+        [self reload];
         
         [self sizeToFit];
         
@@ -59,6 +65,9 @@
     }
     return self;
 }
+
+
+
 
 - (void)dealloc
 {
@@ -74,7 +83,7 @@
 - (void)dataChanged:(NSNotification *)notification
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.children = [TOChild MR_findAll];
+        [self reload];
         [self.agePicker reloadAllComponents];
     });
 }

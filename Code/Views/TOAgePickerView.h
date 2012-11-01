@@ -14,4 +14,7 @@ typedef void (^AgePickerBlock)();
 
 @property(copy, nonatomic) AgePickerBlock onPickerDone;
 @property(nonatomic) NSDictionary *currentAge;
+
+- (void)reload;
+
 @end

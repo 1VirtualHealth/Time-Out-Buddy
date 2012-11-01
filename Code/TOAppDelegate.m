@@ -21,6 +21,19 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 
 #pragma mark - Private methods
 
+- (void)firstRunItems
+{
+    BOOL bypassHelp =  [[NSUserDefaults standardUserDefaults] boolForKey:@"bypassHelp"];
+    if (!bypassHelp) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"bypassHelp"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.rootController performSegueWithIdentifier:@"launchHelpSegue" sender:nil];
+        });
+    }
+    
+}
+
 - (void)setupDatabase
 {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"TimeOutBuddy.db"];
@@ -44,6 +57,9 @@ int ddLogLevel = LOG_LEVEL_ERROR;
 {
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     navigationBar.tintColor = [UIColor colorWithRed:170/255.0 green:58/255.0 blue:211/255.0 alpha:1.0];
+    
+    UIToolbar *toolbar = [UIToolbar appearance];
+    toolbar.tintColor = [UIColor colorWithRed:170/255.0 green:58/255.0 blue:211/255.0 alpha:1.0];
 }
 
 
@@ -67,6 +83,8 @@ int ddLogLevel = LOG_LEVEL_ERROR;
     self.window.rootViewController = self.rootController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self firstRunItems];
     return YES;
 }
 

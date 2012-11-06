@@ -76,6 +76,7 @@
                     <connections>
                         <outlet property="selectAgeButton" destination="97W-da-Xym" id="elh-Ww-SjM"/>
                         <outlet property="startButton" destination="fg4-Qf-n6O" id="H4E-r3-RKe"/>
+                        <outlet property="view" destination="tcC-y5-H2R" id="XcL-fi-bmH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkC-hf-xPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -289,56 +290,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="transparent_logo.png" width="827" height="486"/>
         <image name="transparent_logo_small.png" width="95" height="56"/>
     </resources>
-    <classes>
-        <class className="GradientButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GradientButton.h"/>
-        </class>
-        <class className="TOChildDetailController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOChildDetailController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelButtonPressed:"/>
-                <relationship kind="action" name="dateValueChanged:"/>
-                <relationship kind="action" name="saveButtonPressed:"/>
-                <relationship kind="outlet" name="birthdayPicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="TOChildrenController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOChildrenController.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonPressed:"/>
-                <relationship kind="action" name="doneButtonPressed:"/>
-            </relationships>
-        </class>
-        <class className="TOHelpController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOHelpController.h"/>
-            <relationships>
-                <relationship kind="action" name="donePressed:"/>
-                <relationship kind="action" name="pageControlPressed:"/>
-                <relationship kind="outlet" name="helpScroller" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-            </relationships>
-        </class>
-        <class className="TOMainController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOMainController.h"/>
-            <relationships>
-                <relationship kind="action" name="endTimeOutPressed:"/>
-                <relationship kind="outlet" name="endButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="slideLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TOSetupController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TOSetupController.h"/>
-            <relationships>
-                <relationship kind="action" name="chooseAge:"/>
-                <relationship kind="action" name="settingsPressed:"/>
-                <relationship kind="outlet" name="selectAgeButton" candidateClass="GradientButton"/>
-                <relationship kind="outlet" name="startButton" candidateClass="GradientButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

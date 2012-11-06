@@ -19,6 +19,7 @@
 
 @property (strong, nonatomic) TOAgePickerView *agePicker;
 @property (nonatomic, strong) UIPopoverController *popover;
+@property (nonatomic, strong) IBOutlet UIImageView *logoView;
 
 - (void)setAgeButtonDisplay:(NSString *)displayString;
 - (void)populateVersionLabel;
@@ -102,6 +103,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if(UIUserInterfaceIdiomPhone == UI_USER_INTERFACE_IDIOM()) {
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            self.logoView.frame = CGRectOffset(self.logoView.frame, 0, 50);
+        }
+        else {
+            self.logoView.frame = CGRectOffset(self.logoView.frame, 0, -50);
+        }
+    }
 }
 
 - (void)setAgeButtonDisplay:(NSString *)displayString

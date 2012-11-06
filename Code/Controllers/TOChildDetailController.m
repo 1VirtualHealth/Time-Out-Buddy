@@ -114,7 +114,7 @@
     self.view.backgroundColor = [UIColor underPageBackgroundColor];
     self.nameField.text = self.child.name;
     self.birthdayPicker.date = self.child.birthdate;
-    
+    self.birthdayPicker.maximumDate = [NSDate date];
     self.saveButton.enabled = [self validate];
 
 	// Do any additional setup after loading the view.

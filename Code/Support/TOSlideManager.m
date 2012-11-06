@@ -85,6 +85,10 @@
     NSString *imagesPath = [[NSBundle mainBundle] pathForResource:@"images" ofType:@"plist"];
     NSArray *allImages = [NSArray arrayWithContentsOfFile:imagesPath];
     NSInteger age = [[self.ageGroup valueForKey:@"age"] intValue];
+    
+    //Age guard
+    if ( age < 3) age = 3;
+    
     NSPredicate *agePredicate = [NSPredicate predicateWithFormat:@"ageFilter == NULL OR (ageFilter.minimum <= %d AND ageFilter.maximum >= %d)", age, age];
     self.images = [allImages filteredArrayUsingPredicate:agePredicate];
     self.unusedImages = [NSMutableArray arrayWithArray:self.images];

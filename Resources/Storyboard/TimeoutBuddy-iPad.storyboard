@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="97W-da-Xym" customClass="GradientButton">
-                                <rect key="frame" x="241" y="711" width="287" height="44"/>
+                                <rect key="frame" x="241" y="790" width="287" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Choose Age">
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fg4-Qf-n6O" customClass="GradientButton">
-                                <rect key="frame" x="241" y="790" width="287" height="44"/>
+                                <rect key="frame" x="241" y="869" width="287" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Time Out">
@@ -74,9 +74,9 @@
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <connections>
+                        <outlet property="logoView" destination="tcC-y5-H2R" id="KwK-Hb-Z20"/>
                         <outlet property="selectAgeButton" destination="97W-da-Xym" id="elh-Ww-SjM"/>
                         <outlet property="startButton" destination="fg4-Qf-n6O" id="H4E-r3-RKe"/>
-                        <outlet property="view" destination="tcC-y5-H2R" id="XcL-fi-bmH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KkC-hf-xPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
